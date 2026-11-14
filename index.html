@@ -71,26 +71,48 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;op
 .blob{position:absolute;left:-10vw;bottom:-20vw;width:55vw;height:55vw;border-radius:50%;background:radial-gradient(circle,rgba(32,157,80,.18),transparent 65%);z-index:0}
 
 /* ---------- problem ---------- */
-.problem{background:var(--forest);color:#EDEFE6;position:relative;overflow:hidden}
-.problem .wrap{display:grid;grid-template-columns:5fr 7fr;gap:70px;padding:130px 0}
-.photo-tape{position:relative;align-self:start;position:sticky;top:110px}
-.photo-tape .frame{background:#fff;padding:14px 14px 60px;transform:rotate(-3deg);box-shadow:0 30px 60px rgba(0,0,0,.35)}
-.photo-tape .frame img{aspect-ratio:3/4;object-fit:cover;width:100%}
-.photo-tape .cap{position:absolute;left:28px;bottom:22px;font-family:var(--serif);font-style:italic;color:#333;font-size:20px;transform:rotate(-3deg)}
-.tape{position:absolute;width:120px;height:34px;background:rgba(225,223,217,.75);top:-14px;left:50%;transform:translateX(-50%) rotate(4deg);z-index:2}
-.big-quote{font-family:var(--serif);font-size:clamp(34px,4vw,58px);line-height:1.08;margin-bottom:80px}
-.big-quote .mk{color:var(--green);font-size:1.4em;line-height:0;vertical-align:-.25em}
-.lbl{font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:#8FD3A4;margin-bottom:26px}
-.plist{list-style:none;counter-reset:p}
-.plist li{counter-increment:p;display:grid;grid-template-columns:60px 1fr;gap:10px;padding:28px 0;border-top:1px solid rgba(255,255,255,.15);font-size:clamp(20px,2vw,27px);line-height:1.35;font-family:var(--disp);font-weight:400}
-.plist li:before{content:"0" counter(p);font-family:var(--body);font-size:13px;color:#8FD3A4;padding-top:9px;letter-spacing:.1em}
-.plist li.strike .t{position:relative;display:inline}
-.hl{background-image:linear-gradient(transparent 60%,rgba(32,157,80,.75) 60%);background-repeat:no-repeat;background-size:0% 100%;transition:background-size 1.2s cubic-bezier(.2,.8,.2,1) .3s;font-weight:600;color:#fff}
-.in .hl,.hl.in{background-size:100% 100%}
-.bottom-line{margin-top:70px;padding:44px;background:var(--green);color:#fff;position:relative;border-radius:4px 40px 4px 40px}
-.bottom-line .lbl{color:#E7F7EC;margin-bottom:14px}
-.bottom-line p{font-family:var(--disp);font-weight:800;font-size:clamp(26px,3vw,42px);line-height:1.05;letter-spacing:-.02em}
-
+.problem{background:var(--stone);position:relative;overflow:hidden;padding:130px 0 0}
+.pq{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:start;margin-bottom:110px}
+.pq-av{width:150px;height:150px;border-radius:50%;overflow:hidden;border:6px solid #fff;box-shadow:0 18px 40px rgba(0,0,0,.15);position:relative;margin-top:14px}
+.pq-av img{width:100%;height:100%;object-fit:cover;object-position:50% 15%}
+.pq-av:after{content:"“";position:absolute;right:-6px;bottom:-30px;font-family:var(--serif);font-size:120px;color:var(--green);line-height:1}
+.pq blockquote{font-family:var(--serif);font-size:clamp(40px,5.6vw,88px);line-height:1;letter-spacing:-.015em;color:var(--ink)}
+.pq .strike{position:relative;display:inline-block}
+.pq .strike:after{content:"";position:absolute;left:-2%;top:54%;height:.09em;width:0;background:#c0392b;transform:rotate(-3deg);transition:width .8s cubic-bezier(.2,.8,.2,1) .5s}
+.pq.in .strike:after{width:104%}
+.pq .val{position:relative;color:var(--moss);font-style:italic}
+.pq .val svg{position:absolute;left:0;bottom:-.18em;width:100%;height:.3em;overflow:visible}
+.pq .val path{fill:none;stroke:var(--green);stroke-width:5;stroke-linecap:round;stroke-dasharray:600;stroke-dashoffset:600;transition:stroke-dashoffset 1.4s ease 1.1s}
+.pq.in .val path{stroke-dashoffset:0}
+.pb-head{display:flex;align-items:center;gap:18px;margin-bottom:28px}
+.pb-head span{font-family:var(--disp);font-weight:800;font-size:clamp(28px,3vw,40px);letter-spacing:-.02em}
+.pb-head:after{content:"";flex:1;height:2px;background:var(--ink)}
+.versus{display:grid;grid-template-columns:5fr 7fr;gap:0;border:2px solid var(--ink);border-radius:22px;overflow:hidden;background:#fff}
+.vs-l{padding:46px;display:flex;flex-direction:column;gap:30px;border-right:2px dashed #bdb8ad;position:relative}
+.vs-l p{font-family:var(--disp);font-size:clamp(22px,2.1vw,30px);line-height:1.2;letter-spacing:-.01em}
+.vs-l p b{font-weight:800}
+.vs-l .no{position:absolute;right:-22px;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:700;font-size:14px;z-index:2}
+.vs-r{background:var(--forest);color:#fff;padding:46px 46px 40px 60px}
+.vs-r .lead{font-size:18px;color:#B9DDBF;margin-bottom:22px}
+.tiles{display:flex;flex-wrap:wrap;gap:14px}
+.tile{position:relative;font-family:var(--disp);font-weight:800;font-size:clamp(22px,2.4vw,34px);letter-spacing:-.02em}
+.tile b{position:relative;z-index:3;display:block;background:var(--green);color:#fff;padding:12px 22px;border-radius:12px}
+.tile i{position:absolute;inset:0;border-radius:12px;border:2px solid rgba(255,255,255,.35);transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.tile i:nth-of-type(1){transform:translate(0,0);z-index:2}
+.tile i:nth-of-type(2){transform:translate(0,0);z-index:1}
+.versus.in .tile i:nth-of-type(1){transform:translate(7px,7px)}
+.versus.in .tile i:nth-of-type(2){transform:translate(14px,14px)}
+.tile:nth-child(2) i{transition-delay:.15s}.tile:nth-child(3) i{transition-delay:.3s}.tile:nth-child(4) i{transition-delay:.45s}
+.tile b{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .7s cubic-bezier(.2,.8,.2,1)}
+.versus.in .tile b{opacity:1;transform:none}
+.tile:nth-child(2) b{transition-delay:.12s}.tile:nth-child(3) b{transition-delay:.24s}.tile:nth-child(4) b{transition-delay:.36s}
+.vs-r .tail{margin-top:30px;font-family:var(--serif);font-style:italic;font-size:28px;color:#fff}
+.bline{margin-top:110px;background:var(--green);color:#fff;padding:90px 0;position:relative;overflow:hidden}
+.bline .wrap{display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:start}
+.bline .lbl{font-family:var(--serif);font-style:italic;font-size:30px;color:#E7F7EC;letter-spacing:0;text-transform:none}
+.bline p{font-family:var(--disp);font-weight:800;font-size:clamp(34px,4.6vw,72px);line-height:.98;letter-spacing:-.035em}
+.bline p em{font-family:var(--serif);font-weight:400;color:var(--forest)}
+.bline:before{content:"AI";position:absolute;right:-2vw;bottom:-8vw;font-family:var(--disp);font-weight:800;font-size:34vw;line-height:1;color:rgba(255,255,255,.07);letter-spacing:-.06em}
 /* ---------- portfolio ---------- */
 .portfolio{padding:130px 0 110px}
 .sec-head{display:grid;grid-template-columns:auto 1fr;gap:50px;align-items:end;margin-bottom:50px}
@@ -251,14 +273,20 @@ footer a:hover{color:#fff}
   .nav{position:fixed;inset:0;background:var(--paper);flex-direction:column;justify-content:center;font-size:24px;gap:26px;transform:translateY(-100%);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
   .nav.open{transform:none}
   .burger{display:block;position:relative;z-index:60}
-  .hero .wrap,.problem .wrap,.box .wrap,.about .wrap,.contact .wrap,.ai-wrap{grid-template-columns:1fr}
+  .hero .wrap,.box .wrap,.about .wrap,.contact .wrap,.ai-wrap{grid-template-columns:1fr}
   .tube{position:relative;right:auto;top:auto;width:200px;margin:0 auto 10px}
   .hero{padding-top:130px}
   .brand img{height:64px}
   .top.solid .brand img{height:54px}
   .sticker{width:110px;height:110px;top:110px;right:4%}
   .sticker .dot{inset:36px;font-size:16px}
-  .photo-tape{position:relative;top:0;max-width:420px}
+  .pq{grid-template-columns:1fr}
+  .pq-av{width:110px;height:110px}
+  .versus{grid-template-columns:1fr}
+  .vs-l{border-right:0;border-bottom:2px dashed #bdb8ad}
+  .vs-l .no{right:50%;top:auto;bottom:-22px;transform:translateX(50%)}
+  .vs-r{padding:50px 30px 36px}
+  .bline .wrap{grid-template-columns:1fr;gap:16px}
   .sec-head{grid-template-columns:1fr;gap:20px}
   .logo-sheet{grid-template-columns:repeat(3,1fr)}
   .work-grid{grid-template-columns:repeat(3,1fr)}
@@ -280,8 +308,8 @@ footer a:hover{color:#fff}
   .fresh-card{left:12px;right:12px;width:auto}
   .tab{font-size:16px;padding-right:14px}
   .tab img{width:36px;height:36px}
-  .problem .wrap{padding:90px 0}
-  .bottom-line{padding:30px}
+  .problem{padding-top:90px}
+  .vs-l{padding:30px}
 }
 @media (prefers-reduced-motion:reduce){
   *,*:before,*:after{animation:none!important;transition:none!important}
@@ -336,23 +364,33 @@ footer a:hover{color:#fff}
 <!-- PROBLEM -->
 <section class="problem">
   <div class="wrap">
-    <div class="photo-tape rv">
-      <div class="tape"></div>
-      <div class="frame"><img data-img="124bd7a4-3841-4769-84da-4415a79b7f16/with-Tube.png" alt="Robbie holding a tube of thinking gel"></div>
-      <div class="cap">thinking gel</div>
+    <div class="pq rv">
+      <div class="pq-av"><img data-img="124bd7a4-3841-4769-84da-4415a79b7f16/with-Tube.png" alt="Robbie holding a tube of thinking gel"></div>
+      <blockquote>“I prevent AI from <span class="strike">damaging</span> your brand while <span class="val">unlocking its value.<svg viewBox="0 0 300 20" preserveAspectRatio="none"><path d="M2 14 C 60 2, 120 18, 180 8 S 270 6, 298 12"/></svg></span>”</blockquote>
     </div>
-    <div>
-      <p class="big-quote rv"><span class="mk">“</span>I prevent AI from damaging your brand while unlocking its value.<span class="mk">”</span></p>
-      <div class="lbl rv">Here’s the problem:</div>
-      <ul class="plist">
-        <li class="rv"><span class="t">Many companies already <i>think</i> they “have AI covered”</span></li>
-        <li class="rv d1"><span class="t">They believe the risk is <span class="hl">falling behind</span></span></li>
-        <li class="rv d2"><span class="t">In reality, the risk is <span class="hl">looking indistinguishable, incoherent, cookie-cutter or off-brand all together</span></span></li>
-      </ul>
-      <div class="bottom-line rv">
-        <div class="lbl">The bottom line?</div>
-        <p>“AI doesn’t replace creative leadership. It exposes the absence of it.”</p>
+    <div class="pb-head rv"><span>Here’s the problem:</span></div>
+    <div class="versus rv">
+      <div class="vs-l">
+        <p>Many companies already <i>think</i> they <b>“have AI covered”</b></p>
+        <p>They believe the risk is <b>falling behind</b></p>
+        <span class="no">VS</span>
       </div>
+      <div class="vs-r">
+        <p class="lead">In reality, the risk is</p>
+        <div class="tiles">
+          <span class="tile"><i></i><i></i><b>looking indistinguishable</b></span>
+          <span class="tile"><i></i><i></i><b>incoherent</b></span>
+          <span class="tile"><i></i><i></i><b>cookie-cutter</b></span>
+          <span class="tile"><i></i><i></i><b>or off-brand</b></span>
+        </div>
+        <p class="tail">all together</p>
+      </div>
+    </div>
+  </div>
+  <div class="bline">
+    <div class="wrap rv">
+      <div class="lbl">The bottom line?</div>
+      <p>“AI doesn’t replace creative leadership. It <em>exposes</em> the absence of it.”</p>
     </div>
   </div>
 </section>
