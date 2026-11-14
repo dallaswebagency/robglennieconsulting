@@ -201,12 +201,6 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;op
 .bx .b{bottom:0;left:0;right:0;height:3px;transform:scaleX(0);transform-origin:right;transition-delay:.7s}
 .bx .l{top:0;left:0;bottom:0;width:3px;transform:scaleY(0);transform-origin:bottom;transition-delay:1.05s}
 .bx.in .edge{transform:none}
-.bx .flap{position:absolute;top:-3px;height:70px;width:42%;background:var(--paper);border:3px solid var(--ink);border-bottom:0;transform-origin:bottom;transition:transform 1s cubic-bezier(.2,.8,.2,1) 1.2s}
-.bx .flap.fl{left:0;transform:rotateX(0) skewX(0);transform-origin:bottom left}
-.bx .flap.fr{right:0;transform-origin:bottom right}
-.bx .flap{transform:translateY(-100%) scaleY(0)}
-.bx.in .flap.fl{transform:translateY(-100%) skewX(-30deg)}
-.bx.in .flap.fr{transform:translateY(-100%) skewX(30deg)}
 .bx .tube{position:absolute;right:9%;top:-210px;width:150px;transform:translateY(160px) rotate(10deg);opacity:0;transition:transform 1.4s cubic-bezier(.2,.8,.2,1) 1.6s,opacity .6s 1.6s;z-index:-1;filter:drop-shadow(16px 22px 20px rgba(0,0,0,.18))}
 .bx.in .tube{transform:rotate(10deg);opacity:1}
 .bx .stamp{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.2em;font-weight:800;text-transform:uppercase;border:2px solid var(--green);color:var(--green);padding:8px 14px;border-radius:6px;transform:rotate(-2deg);margin-bottom:30px}
@@ -263,7 +257,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;op
 .dream{background:var(--paper);padding:130px 0 120px}
 .dr-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:40px;flex-wrap:wrap}
 .dr-head q{font-family:var(--serif);font-style:italic;font-size:clamp(30px,3.6vw,54px);quotes:"“" "”"}
-.acc{display:flex;gap:12px;height:620px}
+.acc{display:flex;gap:12px;height:min(620px,68vh);min-height:460px}
 .acc .pn{position:relative;flex:1;border-radius:22px;overflow:hidden;cursor:pointer;transition:flex 1s cubic-bezier(.2,.8,.2,1);background:var(--forest);min-width:0}
 .acc .pn.on{flex:3.6}
 .acc .pn img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.12);transition:transform 1.4s cubic-bezier(.2,.8,.2,1),filter 1s;filter:grayscale(.7) brightness(.55)}
@@ -334,7 +328,7 @@ footer ul a:hover,footer .f-contact a:hover{color:var(--green)}
 .f-work{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px}
 .f-work a{color:var(--grey)}
 .f-work a:hover{color:var(--green)}
-.f-word{font-family:var(--disp);font-weight:900;font-size:16.5vw;line-height:.78;letter-spacing:-.06em;font-stretch:72%;text-align:center;color:transparent;-webkit-text-stroke:1.5px rgba(18,47,4,.25);white-space:nowrap;user-select:none;margin-bottom:-2vw}
+.f-word{font-family:var(--disp);font-weight:900;font-size:14vw;line-height:.78;letter-spacing:-.06em;font-stretch:72%;text-align:center;color:transparent;-webkit-text-stroke:1.5px rgba(18,47,4,.25);white-space:nowrap;user-select:none;margin-bottom:-2vw}
 .f-word span{transition:color .4s,-webkit-text-stroke-color .4s}
 .f-word span:hover{color:var(--green);-webkit-text-stroke-color:var(--green)}
 .f-bottom{background:var(--forest);color:#cfd6c8;position:relative;z-index:2}
@@ -561,7 +555,6 @@ footer ul a:hover,footer .f-contact a:hover{color:var(--green)}
   <div class="wrap">
     <div class="bx rv">
       <span class="edge t"></span><span class="edge r"></span><span class="edge b"></span><span class="edge l"></span>
-      <span class="flap fl"></span><span class="flap fr"></span>
       <img class="tube" data-img="3df9e551-1770-4fbf-bcff-a19009d6eaaa/thinking-gel_HERO_2025_close-cut.png" alt="Thinking gel">
       <div class="stamp">✦ Schedule a complimentary consultation</div>
       <h2>I help clients to <em>‘Think Inside the Box’</em><sup>TM</sup></h2>
@@ -730,7 +723,7 @@ document.getElementById('tr1').innerHTML=[...r1,...r1].map(c=>`<b>${c}</b>`).joi
 document.getElementById('tr2').innerHTML=[...r2,...r2].map(c=>`<b>${c}</b>`).join('');
 document.getElementById('cband').innerHTML=Array(6).fill('<b>IT’S TIME FOR SOME <i>FRESH THINKING !</i></b><b>✦</b>').join('');
 document.getElementById('fwork').innerHTML=logos.map(l=>`<a href="${S+l[1]}">${l[2]}</a>`).join('');
-document.getElementById('fword').innerHTML=[...'FRESH THINKING'].map(c=>c===' '?' ':`<span>${c}</span>`).join('');
+document.getElementById('fword').innerHTML=[...'FRESH THINKING'].map(c=>c===' '?'&nbsp;':`<span>${c}</span>`).join('');
 document.getElementById('yr').textContent=new Date().getFullYear();
 
 /* hero headline split */
