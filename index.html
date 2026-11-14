@@ -48,6 +48,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;op
 .hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:end;position:relative;z-index:2}
 .kick{font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--moss);display:flex;align-items:center;gap:12px;margin-bottom:28px}
 .kick:before{content:"";width:34px;height:2px;background:currentColor}
+.spk{color:var(--green);font-size:.9em;margin:0 .35em}
 .hero h1{font-family:var(--disp);font-weight:800;font-size:clamp(44px,6.6vw,104px);line-height:.95;letter-spacing:-.035em}
 .hero h1 em{font-family:var(--serif);font-weight:400;font-style:italic;color:var(--green);letter-spacing:-.01em}
 .hero h1 .w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.06em}
@@ -114,8 +115,8 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;op
 .work-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .work-grid a{position:relative;background:#fff;border-radius:14px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 1px 0 rgba(0,0,0,.06);transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s}
 .work-grid a:hover{transform:translateY(-8px);box-shadow:0 24px 40px rgba(18,47,4,.12)}
-.work-grid .lg{aspect-ratio:1/1;display:grid;place-items:center;padding:16%;background:#fff}
-.work-grid img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.work-grid .lg{aspect-ratio:1/1;position:relative;background:#fff}
+.work-grid img{position:absolute;left:15%;top:15%;width:70%;height:70%;object-fit:contain;mix-blend-mode:multiply;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
 .work-grid a:hover img{transform:scale(1.06)}
 .work-grid .nm{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-top:1px solid #eee;font-family:var(--disp);font-weight:600;font-size:15px}
 .work-grid .nm i{font-style:normal;color:var(--green);transition:transform .3s}
@@ -294,7 +295,7 @@ footer a:hover{color:#fff}
 <!-- HEADER -->
 <header class="top" id="top">
   <div class="wrap">
-    <a href="#" class="brand" aria-label="FRESH THINKING - RobGlennieConsulting home"><img data-img="deada559-7cfa-4f69-b213-a8225b7ee2eb/RGC_LOGO_FRESH-THINKING_AI_2025.png" alt="FRESH THINKING - RobGlennieConsulting logo"></a>
+    <a href="#" class="brand" aria-label="FRESH THINKING RobGlennieConsulting home"><img data-img="deada559-7cfa-4f69-b213-a8225b7ee2eb/RGC_LOGO_FRESH-THINKING_AI_2025.png" alt="FRESH THINKING - RobGlennieConsulting logo"></a>
     <nav class="nav" id="nav">
       <a class="l on" href="#">Home</a>
       <a class="l" href="https://www.robglennieconsulting.com/testimonials">Testimonials</a>
@@ -317,7 +318,7 @@ footer a:hover{color:#fff}
   </div>
   <div class="wrap">
     <div>
-      <div class="kick">FRESH THINKING - RobGlennieConsulting</div>
+      <div class="kick">FRESH THINKING <span class="spk">✦</span> RobGlennieConsulting</div>
       <h1 id="h1">"AI doesn't replace creative leadership. It <em>exposes</em> the absence of it."</h1>
     </div>
     <div class="hero-side rv d3">
@@ -361,7 +362,7 @@ footer a:hover{color:#fff}
   <div class="wrap">
     <div class="sec-head">
       <h2 class="rv">Port<span>.</span><br>folio</h2>
-      <p class="rv d2"><b>FRESH THINKING - RobGlennieConsulting &gt;</b> I help clients to 'Think Inside the Box' TM working with owners and decision-makers to help them determine what they do best... then, tell the world about it.</p>
+      <p class="rv d2"><b>FRESH THINKING <span class="spk">✦</span> RobGlennieConsulting &gt;</b> I help clients to 'Think Inside the Box' TM working with owners and decision-makers to help them determine what they do best... then, tell the world about it.</p>
     </div>
     <div class="tabs rv" role="tablist">
       <button class="tab on" data-p="logos"><img data-img="02ef4997-9182-4ea1-8550-de01013fa6ae/RGC_WEBSITE_2026_LOGOS_Square_RGC_WHITE-Box.png" alt="">LOGOs</button>
@@ -429,7 +430,7 @@ footer a:hover{color:#fff}
     <div>
       <h2 class="rv">About <span>Robbie</span></h2>
       <p class="lead rv d1">As an award-winning Creative Director, Art Director, Illustrator, and Ad Agency owner, Robbie produces iconic branding, marketing and identities.</p>
-      <div class="clients-lbl rv">With ad agencies in Vancouver and Winnipeg - clients have included:</div>
+      <div class="clients-lbl rv">With ad agencies in Vancouver and Winnipeg, clients have included:</div>
       <p class="clients rv d1" id="clients"></p>
       <p class="now rv">These days, Robbie’s visionary focus helps brands and businesses ‘Think INSIDE The Box,’ with breakthrough strategies to optimize latent assets and catalyze new growth.</p>
       <div class="prof rv">
@@ -498,13 +499,13 @@ footer a:hover{color:#fff}
 <footer>
   <div class="wrap">
     <div>
-      <div class="f-logo"><img data-img="deada559-7cfa-4f69-b213-a8225b7ee2eb/RGC_LOGO_FRESH-THINKING_AI_2025.png" alt="FRESH THINKING - RobGlennieConsulting"></div>
-      <p style="margin-top:18px">FRESH THINKING - RobGlennieConsulting</p>
+      <div class="f-logo"><img data-img="deada559-7cfa-4f69-b213-a8225b7ee2eb/RGC_LOGO_FRESH-THINKING_AI_2025.png" alt="FRESH THINKING RobGlennieConsulting"></div>
+      <p style="margin-top:18px">FRESH THINKING <span class="spk">✦</span> RobGlennieConsulting</p>
     </div>
     <div><h5>Location</h5><p>Caught Between Kits &amp; Shaughnessy<br>VANCOUVER BC CANADA</p></div>
     <div><h5>Contact</h5><p><a href="mailto:Rob@RobGlennieConsulting.com">Rob@RobGlennieConsulting.com</a><br><a href="tel:2047998199">204-799-8199</a><br>(local in Vancouver)</p></div>
     <div><h5>Menu</h5><ul><li><a href="#">Home</a></li><li><a href="https://www.robglennieconsulting.com/testimonials">Testimonials</a></li><li><a href="#contact-me">Contact</a></li><li><a href="https://www.robglennieconsulting.com/pay-invoice">PAY INVOICE</a></li><li><a href="https://www.robglennieconsulting.com/appointments">Book now</a></li></ul></div>
-    <div class="f-bottom"><span>© <span id="yr"></span> FRESH THINKING - RobGlennieConsulting</span><span>Get out your thinking gel!</span></div>
+    <div class="f-bottom"><span>© <span id="yr"></span> FRESH THINKING <span class="spk">✦</span> RobGlennieConsulting</span><span>Get out your thinking gel!</span></div>
   </div>
 </footer>
 
