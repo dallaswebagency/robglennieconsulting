@@ -199,9 +199,9 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;op
 .marq{background:var(--stone);padding:26px 0;overflow:hidden;border-block:1px solid #cbc7bd}
 .marq .track{display:flex;gap:60px;width:max-content;animation:mq 40s linear infinite;align-items:center}
 .marq .track{gap:22px}
-.marq span{flex:none;width:190px;height:120px;background:#fff;border-radius:16px;display:grid;place-items:center;padding:14px 26px;box-shadow:0 1px 0 rgba(0,0,0,.05);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.marq span{flex:none;width:200px;height:120px;display:grid;place-items:center;padding:6px 18px;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
 .marq span:hover{transform:translateY(-5px)}
-.marq img{max-width:100%;max-height:100%;object-fit:contain;mix-blend-mode:multiply}
+.marq img{max-width:100%;max-height:100%;object-fit:contain;mix-blend-mode:multiply;filter:contrast(1.08)}
 .marq:hover .track{animation-play-state:paused}
 @keyframes mq{to{transform:translateX(-50%)}}
 
@@ -701,7 +701,7 @@ lxA.forEach((a,i)=>{a.addEventListener('mouseenter',()=>lxSet(i));a.addEventList
 lxCard.addEventListener('mousemove',e=>{const r=lxCard.getBoundingClientRect();lxCard.style.transform=`rotateY(${((e.clientX-r.left)/r.width-.5)*10}deg) rotateX(${-((e.clientY-r.top)/r.height-.5)*10}deg)`});
 lxCard.addEventListener('mouseleave',()=>lxCard.style.transform='');
 lxCard.style.cursor='pointer';
-document.getElementById('marq').innerHTML=[...logos,...logos].map(l=>`<span><img src="${CDN+l[0]}?format=300w" alt=""></span>`).join('');
+document.getElementById('marq').innerHTML=[...logos,...logos].map((l,i)=>`<span><img src="${i%logos.length===0?'assets/logo-fresh-thinking.png':CDN+l[0]+'?format=500w'}" alt=""></span>`).join('');
 
 /* client work */
 const work=[
