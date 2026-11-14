@@ -86,6 +86,18 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;op
 .pq .val svg{position:absolute;left:0;bottom:-.18em;width:100%;height:.3em;overflow:visible}
 .pq .val path{fill:none;stroke:var(--green);stroke-width:5;stroke-linecap:round;stroke-dasharray:600;stroke-dashoffset:600;transition:stroke-dashoffset 1.4s ease 1.1s}
 .pq.in .val path{stroke-dashoffset:0}
+.bline{background:var(--paper);padding:120px 0 110px;position:relative;margin-top:110px}
+.bl-lab{display:flex;align-items:center;gap:14px;font-family:var(--serif);font-style:italic;font-size:clamp(24px,2.4vw,34px);color:var(--moss);margin-bottom:36px}
+.bl-lab i{width:44px;height:44px;border-radius:50%;border:2px solid var(--green);display:grid;place-items:center;font-style:normal;font-size:18px;color:var(--green)}
+.bl-q{font-family:var(--disp);font-weight:900;font-size:clamp(40px,6.4vw,104px);line-height:.92;letter-spacing:-.045em;font-stretch:72%;max-width:14ch}
+.bl-q span{display:block;font-family:var(--serif);font-weight:400;font-style:italic;color:var(--green);font-stretch:100%;letter-spacing:-.025em;margin-top:.12em;max-width:none}
+.bl-sum{position:relative;margin-top:56px;height:60px}
+.bl-sum i{position:absolute;left:0;height:4px;width:100%;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform 1.3s cubic-bezier(.7,0,.2,1)}
+.bl-sum i:nth-child(1){bottom:16px}
+.bl-sum i:nth-child(2){bottom:4px;transition-delay:.25s}
+.bl-sum.in i{transform:none}
+.bl-sum img{position:absolute;right:6%;bottom:22px;width:86px;transform:rotate(-90deg) translateX(-40%);transform-origin:bottom center;opacity:0;transition:opacity .6s 1.2s,transform 1s cubic-bezier(.2,.8,.2,1) 1.2s;filter:drop-shadow(10px 14px 14px rgba(0,0,0,.18))}
+.bl-sum.in img{opacity:1;transform:rotate(-90deg) translateX(-28%)}
 .prob{display:grid;grid-template-columns:.75fr 1.25fr;gap:70px;align-items:start}
 .prob-h{position:sticky;top:130px}
 .prob-h h3{font-family:var(--disp);font-weight:900;font-size:clamp(46px,5.4vw,84px);line-height:.88;letter-spacing:-.045em;font-stretch:78%}
@@ -109,12 +121,6 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;op
 .rw small{font-family:var(--serif);font-weight:400;font-style:italic;text-transform:none;font-size:.38em;letter-spacing:0;color:#B9DDBF;-webkit-text-stroke:0;margin-right:.3em;vertical-align:middle;font-stretch:100%}
 .reality .post{display:flex;justify-content:flex-end;align-items:center;gap:16px;margin-top:22px;font-family:var(--serif);font-style:italic;font-size:clamp(26px,2.6vw,38px)}
 .reality .post:before{content:"";width:80px;height:2px;background:var(--green)}
-.bline{margin-top:110px;background:var(--green);color:#fff;padding:90px 0;position:relative;overflow:hidden}
-.bline .wrap{display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:start}
-.bline .lbl{font-family:var(--serif);font-style:italic;font-size:30px;color:#E7F7EC;letter-spacing:0;text-transform:none}
-.bline p{font-family:var(--disp);font-weight:800;font-size:clamp(34px,4.6vw,72px);line-height:.98;letter-spacing:-.035em}
-.bline p em{font-family:var(--serif);font-weight:400;color:var(--forest)}
-.bline:before{content:"AI";position:absolute;right:-2vw;bottom:-8vw;font-family:var(--disp);font-weight:800;font-size:34vw;line-height:1;color:rgba(255,255,255,.07);letter-spacing:-.06em}
 /* ---------- portfolio ---------- */
 .portfolio{padding:130px 0 110px}
 .sec-head{display:grid;grid-template-columns:auto 1fr;gap:50px;align-items:end;margin-bottom:56px}
@@ -385,8 +391,7 @@ footer ul a:hover,footer .f-contact a:hover{color:var(--green)}
   .assume svg{left:70px;width:calc(100% - 90px)}
   .reality{padding:46px 26px 40px;margin-top:60px}
   .pq-av{width:110px;height:110px}
-          .bline .wrap{grid-template-columns:1fr;gap:16px}
-  .sec-head{grid-template-columns:1fr;gap:20px}
+            .sec-head{grid-template-columns:1fr;gap:20px}
   .lx{grid-template-columns:1fr}
   .lx-prev{display:none}
   .orig{position:relative;top:0}
@@ -481,9 +486,10 @@ footer ul a:hover,footer .f-contact a:hover{color:var(--green)}
     </div>
   </div>
   <div class="bline">
-    <div class="wrap rv">
-      <div class="lbl">The bottom line?</div>
-      <p>“AI doesn’t replace creative leadership. It <em>exposes</em> the absence of it.”</p>
+    <div class="wrap">
+      <div class="bl-lab rv"><i>↓</i>The bottom line?</div>
+      <p class="bl-q rv d1">“AI doesn’t replace creative leadership. <span>It exposes the absence of it.”</span></p>
+      <div class="bl-sum rv d2"><i></i><i></i><img data-img="3df9e551-1770-4fbf-bcff-a19009d6eaaa/thinking-gel_HERO_2025_close-cut.png" alt="Thinking gel"></div>
     </div>
   </div>
 </section>
