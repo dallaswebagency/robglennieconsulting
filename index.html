@@ -329,6 +329,7 @@ footer ul a:hover,footer .f-contact a:hover{color:var(--green)}
 .f-work a{color:var(--grey)}
 .f-work a:hover{color:var(--green)}
 .f-word{font-family:var(--disp);font-weight:900;font-size:14vw;line-height:.78;letter-spacing:-.06em;font-stretch:72%;text-align:center;color:transparent;-webkit-text-stroke:1.5px rgba(18,47,4,.25);white-space:nowrap;user-select:none;margin-bottom:-2vw}
+.f-word em{font-style:normal;display:inline-block;margin:0 .12em}
 .f-word span{transition:color .4s,-webkit-text-stroke-color .4s}
 .f-word span:hover{color:var(--green);-webkit-text-stroke-color:var(--green)}
 .f-bottom{background:var(--forest);color:#cfd6c8;position:relative;z-index:2}
@@ -723,7 +724,7 @@ document.getElementById('tr1').innerHTML=[...r1,...r1].map(c=>`<b>${c}</b>`).joi
 document.getElementById('tr2').innerHTML=[...r2,...r2].map(c=>`<b>${c}</b>`).join('');
 document.getElementById('cband').innerHTML=Array(6).fill('<b>IT’S TIME FOR SOME <i>FRESH THINKING !</i></b><b>✦</b>').join('');
 document.getElementById('fwork').innerHTML=logos.map(l=>`<a href="${S+l[1]}">${l[2]}</a>`).join('');
-document.getElementById('fword').innerHTML=[...'FRESH THINKING'].map(c=>c===' '?'&nbsp;':`<span>${c}</span>`).join('');
+document.getElementById('fword').innerHTML=['FRESH','THINKING'].map(w=>'<em>'+[...w].map(c=>`<span>${c}</span>`).join('')+'</em>').join('');':`<span>${c}</span>`).join('');
 document.getElementById('yr').textContent=new Date().getFullYear();
 
 /* hero headline split */
