@@ -202,7 +202,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;op
 .marq{background:var(--stone);padding:26px 0;overflow:hidden;border-block:1px solid #cbc7bd}
 .marq .track{display:flex;gap:60px;width:max-content;animation:mq 40s linear infinite;align-items:center}
 .marq .track{gap:22px}
-.marq span{flex:none;width:200px;height:120px;display:grid;place-items:center;padding:6px 18px;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.marq span{flex:none;width:200px;height:120px;background:var(--stone);display:grid;place-items:center;padding:6px 18px;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
 .marq span:hover{transform:translateY(-5px)}
 .marq img{max-width:100%;max-height:100%;object-fit:contain;mix-blend-mode:multiply;filter:brightness(1.07) contrast(1.12)}
 .marq:hover .track{animation-play-state:paused}
@@ -210,7 +210,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;op
 
 /* ---------- inside the box ---------- */
 .box{padding:140px 0 130px;position:relative}
-.box .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:70px;align-items:center}
+.box .wrap{display:block;max-width:980px}
 .bx-txt h2{font-family:var(--disp);font-weight:900;font-size:clamp(42px,5.4vw,84px);line-height:.92;letter-spacing:-.04em;font-stretch:76%;margin-bottom:34px}
 .bx-txt h2 .inbox{display:inline-block;font-family:var(--serif);font-weight:400;font-style:italic;color:var(--green);font-stretch:100%;letter-spacing:-.02em;border:3px solid var(--ink);padding:0 .22em .06em;margin-top:.1em;position:relative}
 .bx-txt h2 .inbox:after{content:"";position:absolute;inset:-3px;border:3px solid var(--green);transform:translate(10px,10px);z-index:-1;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
@@ -220,17 +220,20 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;op
 .bx-txt .forest{font-family:var(--serif);font-style:italic;color:var(--moss)}
 .bx-txt .tell{display:flex;align-items:center;gap:18px;margin-top:30px;font-family:var(--serif);font-style:italic;font-size:clamp(28px,3vw,44px)}
 .bx-txt .tell:before{content:"";width:60px;height:2px;background:var(--green)}
-.ticket{position:relative;background:var(--forest);color:#fff;border-radius:26px;padding:40px 38px 34px;box-shadow:0 40px 70px rgba(18,47,4,.28);transform:rotate(2deg);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
-.ticket:hover{transform:rotate(0) translateY(-6px)}
-.ticket .cut{position:absolute;left:0;right:0;top:62%;border-top:2px dashed rgba(255,255,255,.25)}
-.ticket .cut:before,.ticket .cut:after{content:"";position:absolute;top:-17px;width:32px;height:32px;border-radius:50%;background:var(--paper)}
-.ticket .cut:before{left:-17px}.ticket .cut:after{right:-17px}
-.ticket .tag{display:inline-block;background:var(--green);font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;padding:7px 12px;border-radius:99px;margin-bottom:20px}
-.ticket h3{font-family:var(--disp);font-weight:800;font-size:clamp(28px,2.6vw,38px);line-height:1.02;letter-spacing:-.025em;max-width:12ch}
-.ticket img{position:absolute;right:20px;top:-60px;width:92px;transform:rotate(14deg);filter:drop-shadow(10px 16px 16px rgba(0,0,0,.3))}
-.ticket .bot{margin-top:86px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
-.ticket .bot span{font-family:var(--serif);font-style:italic;font-size:20px;color:#B9DDBF}
-.ticket .btn:hover{background:#fff;color:var(--forest)}
+
+.consult{display:grid;grid-template-columns:1fr 1fr;min-height:640px;background:var(--forest);color:#fff;overflow:hidden}
+.consult .img{position:relative;overflow:hidden}
+.consult .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;transform:scale(1.12);transition:transform 1.8s cubic-bezier(.2,.8,.2,1)}
+.consult.in .img img{transform:none}
+.consult .txt{display:flex;flex-direction:column;justify-content:center;padding:90px clamp(30px,6vw,110px);position:relative}
+.consult .txt:before{content:"";position:absolute;width:380px;height:380px;border-radius:50%;border:2px solid rgba(255,255,255,.08);right:-120px;top:-120px}
+.consult .tag{align-self:flex-start;background:var(--green);font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;padding:8px 14px;border-radius:99px;margin-bottom:28px}
+.consult h3{font-family:var(--disp);font-weight:900;font-size:clamp(40px,4.8vw,76px);line-height:.92;letter-spacing:-.04em;font-stretch:76%;margin-bottom:26px}
+.consult h3 em{font-family:var(--serif);font-weight:400;font-style:italic;color:#8FD3A4;font-stretch:100%}
+.consult .q{font-family:var(--serif);font-style:italic;font-size:24px;color:#B9DDBF;margin-bottom:36px}
+.consult .acts{display:flex;gap:14px;flex-wrap:wrap}
+.consult .btn:hover{background:#fff;color:var(--forest)}
+.consult .btn.ghost{color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.6)}
 
 /* ---------- about ---------- */
 .about{background:#fff;padding:140px 0 0;position:relative;overflow:hidden}
@@ -368,8 +371,7 @@ footer ul a:hover,footer .f-contact a:hover{color:var(--green)}
   .burger{display:block;position:relative;z-index:60}
   .hero .wrap,.ai-wrap,.ab-top,.c-grid,.box .wrap{grid-template-columns:1fr}
   .ab-photo{max-width:440px}
-  .ticket{transform:none;margin-top:40px}
-  .ab-photo .badge{right:0;width:120px;height:120px;font-size:16px}
+    .ab-photo .badge{right:0;width:120px;height:120px;font-size:16px}
   .prof{grid-template-columns:1fr}
   .chips{grid-template-columns:repeat(2,1fr)}
   .acc{flex-direction:column;height:auto}
@@ -565,13 +567,17 @@ footer ul a:hover,footer .f-contact a:hover{color:var(--green)}
       <p class="rv d1">working with owners and decision-makers to help them see <span class="forest">the forest for the trees</span> to determine the unique things that they do best. Develop and hone that difference, and then...</p>
       <p class="tell rv d2">…tell the world about it.</p>
     </div>
-    <div class="ticket rv d2">
-      <img data-img="3df9e551-1770-4fbf-bcff-a19009d6eaaa/thinking-gel_HERO_2025_close-cut.png" alt="Thinking gel">
-      <span class="tag">Complimentary</span>
-      <h3>Schedule a complimentary consultation</h3>
-      <span class="cut"></span>
-      <div class="bot"><span>Get out your thinking gel.</span><a class="btn mag" href="https://www.robglennieconsulting.com/appointments">GRAB SOME TIME <span class="ar">→</span></a></div>
-    </div>
+  </div>
+</section>
+
+<!-- CONSULTATION -->
+<section class="consult rv">
+  <div class="img"><img data-img="124bd7a4-3841-4769-84da-4415a79b7f16/with-Tube.png" alt="Robbie holding a tube of thinking gel"></div>
+  <div class="txt">
+    <span class="tag">Complimentary</span>
+    <h3>Schedule a <em>complimentary</em> consultation</h3>
+    <p class="q">“Get out your thinking gel.”</p>
+    <div class="acts"><a class="btn mag" href="https://www.robglennieconsulting.com/appointments">GRAB SOME TIME <span class="ar">→</span></a><a class="btn ghost" href="#contact-me">CONTACT ME</a></div>
   </div>
 </section>
 
