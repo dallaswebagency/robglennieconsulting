@@ -235,13 +235,13 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;op
 
 /* ---------- about ---------- */
 .about{background:#fff;padding:140px 0 0;position:relative;overflow:hidden}
-.ab-top{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:center}
+.ab-top{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:center}
 .ab-photo{position:relative}
-.ab-photo .ph{border-radius:0 0 200px 0;overflow:hidden;aspect-ratio:4/5}
+.ab-photo .ph{border-radius:0 0 0 200px;overflow:hidden;aspect-ratio:4/5}
 .ab-photo .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;transform:scale(1.15);transition:transform 1.6s cubic-bezier(.2,.8,.2,1)}
 .ab-photo.in .ph img{transform:scale(1)}
-.ab-photo .badge{position:absolute;right:-30px;top:40px;background:var(--green);color:#fff;border-radius:50%;width:150px;height:150px;display:grid;place-items:center;text-align:center;font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.1;transform:rotate(8deg);box-shadow:0 20px 40px rgba(32,157,80,.35)}
-.ab-photo .poster-mini{position:absolute;left:-30px;bottom:-40px;width:150px;transform:rotate(-7deg);box-shadow:0 20px 40px rgba(0,0,0,.25);border:6px solid #fff;transition:transform .5s}
+.ab-photo .badge{position:absolute;left:-40px;top:40px;background:var(--green);color:#fff;border-radius:50%;width:150px;height:150px;display:grid;place-items:center;text-align:center;font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.1;transform:rotate(8deg);box-shadow:0 20px 40px rgba(32,157,80,.35)}
+.ab-photo .poster-mini{position:absolute;right:-24px;bottom:-40px;width:150px;transform:rotate(-7deg);box-shadow:0 20px 40px rgba(0,0,0,.25);border:6px solid #fff;transition:transform .5s}
 .ab-photo .poster-mini:hover{transform:rotate(0) scale(1.05)}
 .ab-kick{font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:800;color:var(--green);margin-bottom:22px}
 .about h2{font-family:var(--disp);font-weight:900;font-size:clamp(54px,7vw,112px);letter-spacing:-.045em;line-height:.85;margin-bottom:34px;font-stretch:80%}
@@ -385,7 +385,7 @@ footer ul a:hover,footer .f-contact a:hover{color:var(--green)}
   .burger{display:block;position:relative;z-index:60}
   .hero .wrap,.ai-wrap,.ab-top,.c-grid,.box .wrap{grid-template-columns:1fr}
   .ab-photo{max-width:440px}
-    .ab-photo .badge{right:0;width:120px;height:120px;font-size:16px}
+    .ab-photo .badge{left:0;width:120px;height:120px;font-size:16px}
       .acc{flex-direction:column;height:auto}
   .acc .pn{height:90px;flex:none!important;transition:height 1s cubic-bezier(.2,.8,.2,1)}
   .acc .pn.on{height:440px}
@@ -592,16 +592,16 @@ footer ul a:hover,footer .f-contact a:hover{color:var(--green)}
 <!-- ABOUT -->
 <section class="about" id="about">
   <div class="wrap ab-top">
-    <div class="ab-photo rv">
-      <div class="ph"><img data-img="c3a4c0e9-ed4e-41ef-9baf-5421d01e14ca/Robbie_2091.JPG" alt="Robbie, Rob Glennie Consulting"></div>
-      <div class="badge">Get out your thinking gel.</div>
-      <a href="https://www.robglennieconsulting.com/decades-of-experience" title="My FRESHEST THINKING"><img class="poster-mini" data-img="375f4008-a729-4f26-91b6-ea2cc0f88280/Decades-of-Experience_POSTER_24x36.png" alt="Decades of Experience poster"></a>
-    </div>
     <div>
       <h2 class="rv d1">About <em>Robbie</em></h2>
       <div class="roles rv d2"><span>Creative Director</span><span>Art Director</span><span>Illustrator</span><span>Ad Agency owner</span></div>
       <p class="ab-lead rv d2">As an award-winning Creative Director, Art Director, Illustrator, and Ad Agency owner, Robbie produces iconic branding, marketing and identities.</p>
       <p class="ab-now rv d3">These days, Robbie’s visionary focus helps brands and businesses ‘Think INSIDE The Box,’ with breakthrough strategies to optimize latent assets and catalyze new growth.</p>
+    </div>
+    <div class="ab-photo rv">
+      <div class="ph"><img data-img="c3a4c0e9-ed4e-41ef-9baf-5421d01e14ca/Robbie_2091.JPG" alt="Robbie, Rob Glennie Consulting"></div>
+      <div class="badge">Get out your thinking gel.</div>
+      <a href="https://www.robglennieconsulting.com/decades-of-experience" title="My FRESHEST THINKING"><img class="poster-mini" data-img="375f4008-a729-4f26-91b6-ea2cc0f88280/Decades-of-Experience_POSTER_24x36.png" alt="Decades of Experience poster"></a>
     </div>
   </div>
   <div class="ticker">
