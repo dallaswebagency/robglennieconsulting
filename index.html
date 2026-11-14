@@ -203,13 +203,6 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;op
 .ai-cta span{font-family:var(--serif);font-style:italic;font-size:26px;margin-right:8px}
 
 /* ---------- marquee ---------- */
-.marq{background:var(--stone);padding:26px 0;overflow:hidden;border-block:1px solid #cbc7bd}
-.marq .track{display:flex;gap:60px;width:max-content;animation:mq 40s linear infinite;align-items:center}
-.marq .track{gap:22px;background:var(--stone)}
-.marq span{flex:none;width:170px;height:124px;background:var(--stone);overflow:hidden;display:grid;place-items:center;padding:0;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
-.marq span:hover{transform:translateY(-5px)}
-.marq img{width:150px;height:150px;max-width:none;object-fit:contain;mix-blend-mode:multiply;filter:brightness(1.07) contrast(1.12)}
-.marq:hover .track{animation-play-state:paused}
 @keyframes mq{to{transform:translateX(-50%)}}
 
 /* ---------- inside the box ---------- */
@@ -570,8 +563,6 @@ footer ul a:hover,footer .f-contact a:hover{color:var(--green)}
 
 <div class="lb" id="lb"><button class="x" aria-label="Close">×</button><button class="pv" aria-label="Previous">←</button><img alt=""><button class="nx" aria-label="Next">→</button></div>
 
-<!-- LOGO MARQUEE -->
-<div class="marq" aria-hidden="true"><div class="track" id="marq"></div></div>
 
 <!-- THINK INSIDE THE BOX -->
 <section class="box">
@@ -730,7 +721,6 @@ lxA.forEach((a,i)=>{a.addEventListener('mouseenter',()=>lxSet(i));a.addEventList
 lxCard.addEventListener('mousemove',e=>{const r=lxCard.getBoundingClientRect();lxCard.style.transform=`rotateY(${((e.clientX-r.left)/r.width-.5)*10}deg) rotateX(${-((e.clientY-r.top)/r.height-.5)*10}deg)`});
 lxCard.addEventListener('mouseleave',()=>lxCard.style.transform='');
 lxCard.style.cursor='pointer';
-document.getElementById('marq').innerHTML=[...logos,...logos].map((l,i)=>`<span><img src="${i%logos.length===0?'assets/logo-fresh-thinking.png':CDN+l[0]+'?format=500w'}" alt=""></span>`).join('');
 
 /* client work */
 const work=[
