@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FRESH THINKING - RobGlennie Consulting</title>
+<title>FRESH THINKING | RobGlennie Consulting</title>
 <meta name="description" content="Creative leadership + brand protection for companies using AI. Without losing their soul, distinctiveness, or trust.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -316,7 +316,7 @@ footer{background:var(--stone);color:var(--ink);position:relative;overflow:hidde
 .f-cta h3{font-family:var(--disp);font-weight:900;font-size:clamp(40px,5vw,78px);line-height:.9;letter-spacing:-.04em;font-stretch:78%}
 .f-cta h3 em{font-family:var(--serif);font-weight:400;font-style:italic;color:var(--green);font-stretch:100%}
 .f-cta .acts{display:flex;gap:12px;flex-wrap:wrap}
-.f-main{width:min(1240px,92vw);margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1.2fr 1fr;gap:50px;padding:60px 0}
+.f-main{width:min(1240px,92vw);margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1.2fr 1fr;gap:50px;padding:60px 0 70px}
 .f-brand img{width:260px;max-width:100%}
 .f-brand p{margin-top:18px;font-size:15px;line-height:1.7;color:var(--grey);max-width:320px}
 footer h5{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--moss);margin-bottom:18px;font-weight:800}
@@ -328,10 +328,6 @@ footer ul a:hover,footer .f-contact a:hover{color:var(--green)}
 .f-work{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px}
 .f-work a{color:var(--grey)}
 .f-work a:hover{color:var(--green)}
-.f-word{font-family:var(--disp);font-weight:900;font-size:14vw;line-height:.78;letter-spacing:-.06em;font-stretch:72%;text-align:center;color:transparent;-webkit-text-stroke:1.5px rgba(18,47,4,.25);white-space:nowrap;user-select:none;margin-bottom:-2vw}
-.f-word em{font-style:normal;display:inline-block;margin:0 .12em}
-.f-word span{transition:color .4s,-webkit-text-stroke-color .4s}
-.f-word span:hover{color:var(--green);-webkit-text-stroke-color:var(--green)}
 .f-bottom{background:var(--forest);color:#cfd6c8;position:relative;z-index:2}
 .f-bottom .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding:20px 0;font-size:13px}
 .totop{background:var(--green);color:#fff;border:0;border-radius:99px;padding:10px 18px;font-weight:800;font-size:12px;letter-spacing:.12em;cursor:pointer}
@@ -524,7 +520,7 @@ footer ul a:hover,footer .f-contact a:hover{color:var(--green)}
       <div class="ai-wrap">
         <div class="orig">
           <div class="ph"><img data-img="c3a4c0e9-ed4e-41ef-9baf-5421d01e14ca/Robbie_2091.JPG" alt="Actual original photo of Robbie"></div>
-          <p class="note"><b>THE ORIGINAL</b>Actual ORIGINAL Photo -all the rest are AI generated (with a little help from the Human - me!)</p>
+          <p class="note"><b>THE ORIGINAL</b>Actual ORIGINAL Photo, all the rest are AI generated (with a little help from the Human, me!)</p>
         </div>
         <div>
           <div class="ai-strip" id="aiStrip">
@@ -657,7 +653,6 @@ footer ul a:hover,footer .f-contact a:hover{color:var(--green)}
     <div><h5>Client Work</h5><div class="f-work" id="fwork"></div></div>
     <div class="f-contact"><h5>Location</h5><p>Caught Between Kits &amp; Shaughnessy<br>VANCOUVER BC CANADA</p><h5 style="margin-top:26px">Contact</h5><p><a href="mailto:Rob@RobGlennieConsulting.com">Rob@RobGlennieConsulting.com</a><br><a href="tel:2047998199">204-799-8199</a><br>(local in Vancouver)</p></div>
   </div>
-  <div class="f-word" aria-hidden="true" id="fword">FRESH THINKING</div>
   <div class="f-bottom"><div class="wrap"><span>© <span id="yr"></span> FRESH THINKING <span class="spk">✦</span> RobGlennieConsulting</span><span>Get out your thinking gel!</span><button class="totop" onclick="scrollTo({top:0,behavior:'smooth'})">BACK TO TOP ↑</button></div></div>
 </footer>
 
@@ -724,7 +719,6 @@ document.getElementById('tr1').innerHTML=[...r1,...r1].map(c=>`<b>${c}</b>`).joi
 document.getElementById('tr2').innerHTML=[...r2,...r2].map(c=>`<b>${c}</b>`).join('');
 document.getElementById('cband').innerHTML=Array(6).fill('<b>IT’S TIME FOR SOME <i>FRESH THINKING !</i></b><b>✦</b>').join('');
 document.getElementById('fwork').innerHTML=logos.map(l=>`<a href="${S+l[1]}">${l[2]}</a>`).join('');
-document.getElementById('fword').innerHTML=['FRESH','THINKING'].map(w=>'<em>'+[...w].map(c=>`<span>${c}</span>`).join('')+'</em>').join('');
 document.getElementById('yr').textContent=new Date().getFullYear();
 
 /* hero headline split */
