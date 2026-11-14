@@ -309,7 +309,7 @@ footer a:hover{color:#fff}
   <div class="tube" id="tube"><img data-img="3df9e551-1770-4fbf-bcff-a19009d6eaaa/thinking-gel_HERO_2025_close-cut.png" alt="Thinking gel tube by Rob Glennie, FRESH THINKING"></div>
   <div class="sticker" aria-hidden="true">
     <svg viewBox="0 0 200 200"><defs><path id="c" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
-      <text font-family="DM Sans" font-weight="700" font-size="17" letter-spacing="5"><textPath href="#c">FRESH THINKING • THINK INSIDE THE BOX •</textPath></text></svg>
+      <text font-family="DM Sans" font-weight="700" font-size="14.5" letter-spacing="3.2"><textPath href="#c">FRESH THINKING • THINK INSIDE THE BOX •</textPath></text></svg>
     <div class="dot">TM</div>
   </div>
   <div class="wrap">
@@ -515,6 +515,7 @@ footer a:hover{color:#fff}
 <div class="cur" id="cur">VIEW</div>
 
 <script>
+(()=>{
 const CDN='https://images.squarespace-cdn.com/content/v1/6913b338c1f3446a4defc921/';
 const S='https://www.robglennieconsulting.com';
 document.querySelectorAll('[data-img]').forEach(i=>{i.src=CDN+i.dataset.img+'?format=1000w';i.loading=i.closest('.hero,.top')?'eager':'lazy'});
@@ -578,12 +579,12 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.targ
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 
 /* header + scroll effects */
-const top=document.getElementById('top'),tube=document.getElementById('tube'),fc=document.getElementById('fc');
+const hdr=document.getElementById('top'),tube=document.getElementById('tube'),fc=document.getElementById('fc');
 const dream=document.getElementById('dream'),dw=[...document.querySelectorAll('#dw div')],dp=[...document.querySelectorAll('#dp img')],pg=[...document.querySelectorAll('#prog i')];
 let mx=0,my=0;
 function onScroll(){
   const y=scrollY;
-  top.classList.toggle('solid',y>40);
+  hdr.classList.toggle('solid',y>40);
   tube.style.transform=`translateY(${y*.35}px) rotate(${-8+y*.02+mx*4}deg) translateX(${mx*14}px)`;
   if(y>900&&!fc.dataset.x)fc.classList.add('show');
   if(innerWidth>1000){
@@ -624,6 +625,7 @@ addEventListener('scroll',()=>{const r=bt.getBoundingClientRect();bt.style.trans
 const nav=document.getElementById('nav'),bg=document.getElementById('burger');
 bg.onclick=()=>nav.classList.toggle('open');
 nav.querySelectorAll('a').forEach(a=>a.onclick=()=>nav.classList.remove('open'));
+})();
 </script>
 </body>
 </html>
