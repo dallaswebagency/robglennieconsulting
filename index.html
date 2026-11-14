@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FRESH THINKING - RobGlennieConsulting</title>
+<meta name="description" content="Creative leadership + brand protection for companies using AI. Without losing their soul, distinctiveness, or trust.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#209D50;--leaf:#46931F;--moss:#2E760A;--forest:#122F04;
+  --stone:#E1DFD9;--paper:#F4F2EC;--ink:#111;--grey:#4A5464;--white:#fff;
+  --disp:'Bricolage Grotesque',system-ui,sans-serif;--serif:'Instrument Serif',Georgia,serif;--body:'DM Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--paper);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1240px,92vw);margin:0 auto}
+/* grain */
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ---------- header ---------- */
+.top{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .4s,box-shadow .4s,padding .4s;padding:18px 0}
+.top.solid{background:rgba(244,242,236,.92);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(0,0,0,.08);padding:10px 0}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand img{height:54px;width:auto;transition:height .4s}
+.top.solid .brand img{height:44px}
+.nav{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:500}
+.nav a.l{position:relative}
+.nav a.l:after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:100%;background:var(--green);transform:scaleX(0);transform-origin:right;transition:transform .35s}
+.nav a.l:hover:after,.nav a.l.on:after{transform:scaleX(1);transform-origin:left}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--green);color:#fff;font-weight:700;font-size:14px;letter-spacing:.04em;padding:14px 24px;border-radius:999px;transition:background .3s,transform .3s;will-change:transform}
+.btn:hover{background:var(--moss)}
+.btn .ar{display:inline-block;transition:transform .3s}
+.btn:hover .ar{transform:translateX(4px) rotate(-45deg)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+.burger{display:none;background:none;border:0;width:40px;height:40px;cursor:pointer}
+.burger span{display:block;height:2px;background:var(--ink);margin:6px 0;transition:.3s}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100vh;padding:150px 0 70px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:end;position:relative;z-index:2}
+.kick{font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--moss);display:flex;align-items:center;gap:12px;margin-bottom:28px}
+.kick:before{content:"";width:34px;height:2px;background:currentColor}
+.hero h1{font-family:var(--disp);font-weight:800;font-size:clamp(44px,6.6vw,104px);line-height:.95;letter-spacing:-.035em}
+.hero h1 em{font-family:var(--serif);font-weight:400;font-style:italic;color:var(--green);letter-spacing:-.01em}
+.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.06em}
+.hero h1 .w>span{display:inline-block;transform:translateY(105%);transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.loaded .hero h1 .w>span{transform:none}
+.hero-side{padding-bottom:16px}
+.hero-side p{font-size:18px;line-height:1.55;max-width:360px;margin-bottom:30px}
+.hero-side p b{font-weight:700;letter-spacing:.01em}
+.tube{position:absolute;right:31%;top:90px;width:min(300px,24vw);z-index:1;transform:rotate(-8deg);filter:drop-shadow(30px 40px 40px rgba(18,47,4,.18));transition:transform .2s linear}
+.tube img{width:100%}
+.sticker{position:absolute;right:6%;top:130px;width:150px;height:150px;z-index:3}
+.sticker svg{width:100%;height:100%;animation:spin 18s linear infinite}
+.sticker .dot{position:absolute;inset:50px;border-radius:50%;background:var(--green);display:grid;place-items:center;color:#fff;font-family:var(--serif);font-style:italic;font-size:22px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-foot{position:relative;z-index:2;margin-top:70px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(0,0,0,.15);padding-top:20px;font-size:13px;color:var(--grey)}
+.scroll-cue{display:flex;align-items:center;gap:10px}
+.scroll-cue i{width:1px;height:40px;background:var(--ink);position:relative;overflow:hidden}
+.scroll-cue i:after{content:"";position:absolute;left:0;top:-40px;width:1px;height:40px;background:var(--green);animation:drip 1.8s infinite}
+@keyframes drip{to{top:40px}}
+.blob{position:absolute;left:-10vw;bottom:-20vw;width:55vw;height:55vw;border-radius:50%;background:radial-gradient(circle,rgba(32,157,80,.18),transparent 65%);z-index:0}
+
+/* ---------- problem ---------- */
+.problem{background:var(--forest);color:#EDEFE6;position:relative;overflow:hidden}
+.problem .wrap{display:grid;grid-template-columns:5fr 7fr;gap:70px;padding:130px 0}
+.photo-tape{position:relative;align-self:start;position:sticky;top:110px}
+.photo-tape .frame{background:#fff;padding:14px 14px 60px;transform:rotate(-3deg);box-shadow:0 30px 60px rgba(0,0,0,.35)}
+.photo-tape .frame img{aspect-ratio:3/4;object-fit:cover;width:100%}
+.photo-tape .cap{position:absolute;left:28px;bottom:22px;font-family:var(--serif);font-style:italic;color:#333;font-size:20px;transform:rotate(-3deg)}
+.tape{position:absolute;width:120px;height:34px;background:rgba(225,223,217,.75);top:-14px;left:50%;transform:translateX(-50%) rotate(4deg);z-index:2}
+.big-quote{font-family:var(--serif);font-size:clamp(34px,4vw,58px);line-height:1.08;margin-bottom:80px}
+.big-quote .mk{color:var(--green);font-size:1.4em;line-height:0;vertical-align:-.25em}
+.lbl{font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:#8FD3A4;margin-bottom:26px}
+.plist{list-style:none;counter-reset:p}
+.plist li{counter-increment:p;display:grid;grid-template-columns:60px 1fr;gap:10px;padding:28px 0;border-top:1px solid rgba(255,255,255,.15);font-size:clamp(20px,2vw,27px);line-height:1.35;font-family:var(--disp);font-weight:400}
+.plist li:before{content:"0" counter(p);font-family:var(--body);font-size:13px;color:#8FD3A4;padding-top:9px;letter-spacing:.1em}
+.plist li.strike .t{position:relative;display:inline}
+.hl{background-image:linear-gradient(transparent 60%,rgba(32,157,80,.75) 60%);background-repeat:no-repeat;background-size:0% 100%;transition:background-size 1.2s cubic-bezier(.2,.8,.2,1) .3s;font-weight:600;color:#fff}
+.in .hl,.hl.in{background-size:100% 100%}
+.bottom-line{margin-top:70px;padding:44px;background:var(--green);color:#fff;position:relative;border-radius:4px 40px 4px 40px}
+.bottom-line .lbl{color:#E7F7EC;margin-bottom:14px}
+.bottom-line p{font-family:var(--disp);font-weight:800;font-size:clamp(26px,3vw,42px);line-height:1.05;letter-spacing:-.02em}
+
+/* ---------- portfolio ---------- */
+.portfolio{padding:130px 0 110px}
+.sec-head{display:grid;grid-template-columns:auto 1fr;gap:50px;align-items:end;margin-bottom:50px}
+.sec-head h2{font-family:var(--disp);font-weight:800;font-size:clamp(56px,9vw,150px);letter-spacing:-.05em;line-height:.8}
+.sec-head h2 span{color:var(--green)}
+.sec-head p{font-size:17px;line-height:1.6;max-width:520px;color:var(--grey)}
+.sec-head p b{color:var(--ink)}
+.tabs{display:flex;gap:10px;border-bottom:2px solid var(--ink);margin-bottom:40px;flex-wrap:wrap}
+.tab{display:flex;align-items:center;gap:14px;background:none;border:0;cursor:pointer;padding:12px 22px 12px 12px;font-family:var(--disp);font-weight:600;font-size:20px;border-radius:14px 14px 0 0;transition:background .3s,color .3s;color:var(--ink)}
+.tab img{width:46px;height:46px;object-fit:cover;border-radius:10px;transition:transform .4s}
+.tab:hover img{transform:rotate(-8deg) scale(1.06)}
+.tab.on{background:var(--ink);color:#fff}
+.pane{display:none}
+.pane.on{display:block;animation:paneIn .7s cubic-bezier(.2,.8,.2,1)}
+@keyframes paneIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.logo-sheet{display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid #cfcbc2;border-top:1px solid #cfcbc2}
+.logo-sheet a{border-right:1px solid #cfcbc2;border-bottom:1px solid #cfcbc2;background:#fff;position:relative;overflow:hidden;aspect-ratio:1/1;display:grid;place-items:center}
+.logo-sheet a img{width:100%;height:100%;object-fit:contain;transition:transform .6s cubic-bezier(.2,.8,.2,1),filter .6s;filter:grayscale(1) contrast(1.05)}
+.logo-sheet a:hover img{transform:scale(1.06);filter:none}
+.logo-sheet a span{position:absolute;left:12px;bottom:12px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--ink);color:#fff;padding:6px 10px;border-radius:99px;transform:translateY(40px);transition:transform .4s}
+.logo-sheet a:hover span{transform:none}
+.work-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+.work-grid a{position:relative;overflow:hidden;background:#fff;border-radius:6px}
+.work-grid a:nth-child(6n+1){grid-column:span 5;grid-row:span 2}
+.work-grid a:nth-child(6n+2),.work-grid a:nth-child(6n+3){grid-column:span 7}
+.work-grid a:nth-child(6n+4),.work-grid a:nth-child(6n+5),.work-grid a:nth-child(6n+6){grid-column:span 4}
+.work-grid img{width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.work-grid a:nth-child(6n+2) img,.work-grid a:nth-child(6n+3) img{aspect-ratio:16/9;object-fit:contain;background:#fff}
+.work-grid a:hover img{transform:scale(1.05)}
+.ai-wrap{display:grid;grid-template-columns:1fr 1.6fr;gap:50px;align-items:start}
+.orig{position:relative}
+.orig img{border-radius:50%;aspect-ratio:1/1;object-fit:cover;width:100%;border:10px solid #fff;box-shadow:0 20px 50px rgba(0,0,0,.12)}
+.orig .note{margin-top:26px;font-family:var(--serif);font-size:24px;line-height:1.25}
+.orig .note b{font-family:var(--body);font-size:12px;letter-spacing:.2em;display:block;color:var(--green);margin-bottom:8px}
+.ai-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ai-strip figure{overflow:hidden;border-radius:4px;background:#ddd;position:relative}
+.ai-strip figure:nth-child(2){transform:translateY(40px)}
+.ai-strip figure:nth-child(5){transform:translateY(40px)}
+.ai-strip img{aspect-ratio:3/4;object-fit:cover;width:100%;transition:transform .8s}
+.ai-strip figure:hover img{transform:scale(1.06)}
+.ai-strip figure:after{content:"AI";position:absolute;top:10px;right:10px;font-size:11px;font-weight:700;background:rgba(255,255,255,.85);padding:4px 8px;border-radius:99px;letter-spacing:.1em}
+.ai-cta{display:flex;gap:16px;align-items:center;margin-top:80px;flex-wrap:wrap}
+.ai-cta span{font-family:var(--serif);font-style:italic;font-size:26px;margin-right:8px}
+
+/* ---------- marquee ---------- */
+.marq{background:var(--stone);padding:26px 0;overflow:hidden;border-block:1px solid #cbc7bd}
+.marq .track{display:flex;gap:60px;width:max-content;animation:mq 40s linear infinite;align-items:center}
+.marq img{height:70px;width:auto;mix-blend-mode:multiply;opacity:.85}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ---------- inside the box ---------- */
+.box{padding:140px 0;position:relative}
+.box .wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.box-vis{position:relative;aspect-ratio:1/1}
+.cube{position:absolute;inset:8% 8%;border:2px dashed var(--ink);display:grid;place-items:center}
+.cube img{width:62%;transform:rotate(6deg);filter:drop-shadow(20px 30px 30px rgba(0,0,0,.15))}
+.cube:before,.cube:after{content:"";position:absolute;width:18px;height:18px;background:var(--green);border-radius:50%}
+.cube:before{top:-10px;left:-10px}.cube:after{bottom:-10px;right:-10px}
+.tm{position:absolute;right:0;top:0;font-family:var(--serif);font-style:italic;font-size:22px;background:var(--paper);padding:0 10px}
+.box h2{font-family:var(--disp);font-weight:800;font-size:clamp(38px,4.6vw,68px);line-height:.98;letter-spacing:-.035em;margin-bottom:28px}
+.box h2 em{font-family:var(--serif);font-weight:400;color:var(--green)}
+.box p{font-size:18px;line-height:1.65;margin-bottom:18px;max-width:520px}
+.box .tell{font-family:var(--serif);font-style:italic;font-size:34px;margin:10px 0 34px;color:var(--moss)}
+
+/* ---------- about ---------- */
+.about{background:var(--ink);color:#e9e9e4;padding:130px 0;position:relative;overflow:hidden}
+.about .wrap{display:grid;grid-template-columns:7fr 5fr;gap:70px}
+.about h2{font-family:var(--disp);font-weight:800;font-size:clamp(50px,7vw,110px);letter-spacing:-.05em;line-height:.85;color:#fff;margin-bottom:40px}
+.about h2 span{font-family:var(--serif);font-weight:400;font-style:italic;color:var(--green);letter-spacing:-.01em}
+.about .lead{font-size:22px;line-height:1.5;margin-bottom:40px;color:#fff}
+.clients{font-family:var(--disp);font-size:clamp(20px,2vw,27px);line-height:1.5;color:#77786f}
+.clients span{transition:color .3s;cursor:default}
+.clients span:hover{color:#fff}
+.clients .sep{color:var(--green);margin:0 .25em}
+.clients-lbl{font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--green);margin:40px 0 16px}
+.about .now{margin-top:44px;font-size:19px;line-height:1.6;border-left:3px solid var(--green);padding-left:22px}
+.poster{position:relative}
+.poster img{width:100%;box-shadow:0 40px 80px rgba(0,0,0,.5);transform:rotate(2deg)}
+.prof{margin-top:50px}
+.prof h4{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--green);margin-bottom:18px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips span{border:1px solid #3a3a37;padding:9px 16px;border-radius:99px;font-size:14px;transition:.3s}
+.chips span:first-child{background:var(--green);border-color:var(--green);color:#fff}
+.chips span:hover{border-color:var(--green);color:#fff}
+.about .btn{margin-top:40px}
+
+/* ---------- dream ---------- */
+.dream{position:relative;height:360vh;background:var(--paper)}
+.dream-pin{position:sticky;top:0;height:100vh;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;overflow:hidden}
+.dream-words{padding-left:4vw}
+.dream-words div{font-family:var(--disp);font-weight:800;font-size:clamp(60px,10vw,170px);line-height:.9;letter-spacing:-.055em;color:transparent;-webkit-text-stroke:1.5px #b8b4aa;transition:color .5s,-webkit-text-stroke-color .5s,transform .6s cubic-bezier(.2,.8,.2,1)}
+.dream-words div.on{color:var(--green);-webkit-text-stroke-color:var(--green);transform:translateX(30px)}
+.dream-pics{position:relative;height:72vh;margin-right:6vw}
+.dream-pics img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:2px 120px 2px 2px;opacity:0;transform:scale(1.08);transition:opacity .8s,transform 1.4s cubic-bezier(.2,.8,.2,1)}
+.dream-pics img.on{opacity:1;transform:none}
+.gel-line{position:absolute;left:4vw;bottom:6vh;display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.gel-line q{font-family:var(--serif);font-style:italic;font-size:30px}
+.prog{position:absolute;right:2vw;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px}
+.prog i{width:6px;height:6px;border-radius:50%;background:#bbb;transition:.3s}
+.prog i.on{background:var(--green);height:26px;border-radius:6px}
+
+/* ---------- contact ---------- */
+.contact{background:var(--green);color:#fff;padding:130px 0;position:relative;overflow:hidden}
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;position:relative;z-index:2}
+.contact .lbl{color:#D6F3DF}
+.contact h2{font-family:var(--disp);font-weight:800;font-size:clamp(42px,5.4vw,84px);line-height:.92;letter-spacing:-.04em;margin-bottom:26px}
+.contact .q{font-family:var(--serif);font-style:italic;font-size:32px;margin-bottom:16px}
+.contact p{font-size:18px;line-height:1.6;opacity:.95}
+.cinfo{margin-top:46px;display:grid;gap:18px;font-size:16px}
+.cinfo a{font-family:var(--disp);font-size:24px;font-weight:600;border-bottom:2px solid rgba(255,255,255,.4);padding-bottom:4px;display:inline-block;transition:border-color .3s}
+.cinfo a:hover{border-color:#fff}
+.cinfo small{display:block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:.75;margin-bottom:4px}
+form{background:var(--paper);color:var(--ink);padding:44px;border-radius:4px;box-shadow:0 40px 80px rgba(18,47,4,.35);transform:rotate(1deg)}
+form .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+form label{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin:18px 0 8px}
+form label small{text-transform:none;letter-spacing:0;font-weight:400;color:var(--grey)}
+form input,form textarea{width:100%;border:0;border-bottom:2px solid #c9c5bb;background:transparent;padding:10px 2px;font:inherit;font-size:16px;outline:none;transition:border-color .3s}
+form input:focus,form textarea:focus{border-color:var(--green)}
+form textarea{min-height:120px;resize:vertical}
+form .btn{margin-top:30px;border:0;cursor:pointer}
+.fieldname{font-family:var(--disp);font-size:20px;font-weight:600;margin-top:4px}
+.c-ring{position:absolute;right:-12vw;top:-12vw;width:44vw;height:44vw;border-radius:50%;border:2px solid rgba(255,255,255,.18)}
+.c-ring.two{right:-6vw;top:-6vw;width:32vw;height:32vw}
+
+/* ---------- footer ---------- */
+footer{background:var(--forest);color:#cfd6c8;padding:80px 0 30px}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.f-logo{background:var(--paper);display:inline-block;padding:14px 18px;border-radius:10px}
+.f-logo img{height:56px}
+footer h5{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#8FD3A4;margin-bottom:16px}
+footer p,footer li{font-size:15px;line-height:1.8;list-style:none}
+footer a:hover{color:#fff}
+.f-bottom{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);padding-top:24px;margin-top:30px;display:flex;justify-content:space-between;font-size:13px;opacity:.7;flex-wrap:wrap;gap:10px}
+
+/* ---------- freshest card ---------- */
+.fresh-card{position:fixed;left:24px;bottom:24px;z-index:60;width:300px;background:#fff;border-radius:10px;box-shadow:0 20px 50px rgba(0,0,0,.2);display:grid;grid-template-columns:90px 1fr;overflow:hidden;transform:translateY(140%);transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.fresh-card.show{transform:none}
+.fresh-card img{width:100%;height:100%;object-fit:cover}
+.fresh-card div{padding:14px 16px}
+.fresh-card h6{font-family:var(--disp);font-weight:800;font-size:17px;line-height:1.05;color:var(--moss);margin-bottom:6px}
+.fresh-card p{font-size:12px;color:var(--grey);margin-bottom:10px}
+.fresh-card a.v{font-size:12px;font-weight:700;letter-spacing:.1em;color:#fff;background:var(--moss);padding:7px 14px;border-radius:99px;display:inline-block}
+.fresh-card button{position:absolute;right:8px;top:6px;background:none;border:0;font-size:18px;cursor:pointer;color:#999}
+
+/* cursor bubble */
+.cur{position:fixed;left:0;top:0;width:86px;height:86px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700;letter-spacing:.1em;pointer-events:none;z-index:80;transform:translate(-50%,-50%) scale(0);transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.cur.on{transform:translate(-50%,-50%) scale(1)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform 1s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}.rv.d4{transition-delay:.4s}
+
+/* ---------- responsive ---------- */
+@media (max-width:1000px){
+  .nav{position:fixed;inset:0;background:var(--paper);flex-direction:column;justify-content:center;font-size:24px;gap:26px;transform:translateY(-100%);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+  .nav.open{transform:none}
+  .burger{display:block;position:relative;z-index:60}
+  .hero .wrap,.problem .wrap,.box .wrap,.about .wrap,.contact .wrap,.ai-wrap{grid-template-columns:1fr}
+  .tube{position:relative;right:auto;top:auto;width:200px;margin:0 auto 10px}
+  .hero{padding-top:120px}
+  .sticker{width:110px;height:110px;top:110px;right:4%}
+  .sticker .dot{inset:36px;font-size:16px}
+  .photo-tape{position:relative;top:0;max-width:420px}
+  .sec-head{grid-template-columns:1fr;gap:20px}
+  .logo-sheet{grid-template-columns:repeat(3,1fr)}
+  .work-grid a{grid-column:span 6!important;grid-row:auto!important}
+  .work-grid img{aspect-ratio:1/1!important}
+  .dream{height:auto}
+  .dream-pin{position:relative;height:auto;grid-template-columns:1fr;padding:100px 0 60px;gap:40px}
+  .dream-pics{height:60vh;margin:0 4vw}
+  .gel-line{position:relative;left:auto;bottom:auto;padding:0 4vw}
+  .prog{display:none}
+  footer .wrap{grid-template-columns:1fr 1fr}
+  .orig{max-width:340px}
+}
+@media (max-width:620px){
+  .logo-sheet{grid-template-columns:repeat(2,1fr)}
+  .ai-strip{grid-template-columns:repeat(2,1fr)}
+  .ai-strip figure{transform:none!important}
+  form{padding:28px}
+  form .row{grid-template-columns:1fr}
+  footer .wrap{grid-template-columns:1fr}
+  .fresh-card{left:12px;right:12px;width:auto}
+  .tab{font-size:16px;padding-right:14px}
+  .tab img{width:36px;height:36px}
+  .problem .wrap{padding:90px 0}
+  .bottom-line{padding:30px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+  .hero h1 .w>span{transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="top" id="top">
+  <div class="wrap">
+    <a href="#" class="brand" aria-label="FRESH THINKING - RobGlennieConsulting home"><img data-img="deada559-7cfa-4f69-b213-a8225b7ee2eb/RGC_LOGO_FRESH-THINKING_AI_2025.png" alt="FRESH THINKING - RobGlennieConsulting logo"></a>
+    <nav class="nav" id="nav">
+      <a class="l on" href="#">Home</a>
+      <a class="l" href="https://www.robglennieconsulting.com/testimonials">Testimonials</a>
+      <a class="l" href="#contact-me">Contact</a>
+      <a class="l" href="https://www.robglennieconsulting.com/pay-invoice">PAY INVOICE</a>
+      <a class="btn mag" href="https://www.robglennieconsulting.com/appointments">Book now <span class="ar">→</span></a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob"></div>
+  <div class="tube" id="tube"><img data-img="3df9e551-1770-4fbf-bcff-a19009d6eaaa/thinking-gel_HERO_2025_close-cut.png" alt="Thinking gel tube by Rob Glennie, FRESH THINKING"></div>
+  <div class="sticker" aria-hidden="true">
+    <svg viewBox="0 0 200 200"><defs><path id="c" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
+      <text font-family="DM Sans" font-weight="700" font-size="17" letter-spacing="5"><textPath href="#c">FRESH THINKING • THINK INSIDE THE BOX •</textPath></text></svg>
+    <div class="dot">TM</div>
+  </div>
+  <div class="wrap">
+    <div>
+      <div class="kick">FRESH THINKING - RobGlennieConsulting</div>
+      <h1 id="h1">"AI doesn't replace creative leadership. It <em>exposes</em> the absence of it."</h1>
+    </div>
+    <div class="hero-side rv d3">
+      <p><b>CREATIVE LEADERSHIP + BRAND PROTECTION FOR COMPANIES USING AI.</b> Without losing their soul, distinctiveness, or trust.</p>
+      <a class="btn mag" href="#contact-me">LET'S GET CLICKING <span class="ar">→</span></a>
+    </div>
+  </div>
+  <div class="wrap hero-foot rv d4">
+    <span>Vancouver BC Canada</span>
+    <span class="scroll-cue"><i></i> Scroll</span>
+    <span>Dream it. Build it. Grow it. Sell it.</span>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="wrap">
+    <div class="photo-tape rv">
+      <div class="tape"></div>
+      <div class="frame"><img data-img="124bd7a4-3841-4769-84da-4415a79b7f16/with-Tube.png" alt="Robbie holding a tube of thinking gel"></div>
+      <div class="cap">thinking gel</div>
+    </div>
+    <div>
+      <p class="big-quote rv"><span class="mk">“</span>I prevent AI from damaging your brand while unlocking its value.<span class="mk">”</span></p>
+      <div class="lbl rv">Here’s the problem:</div>
+      <ul class="plist">
+        <li class="rv"><span class="t">Many companies already <i>think</i> they “have AI covered”</span></li>
+        <li class="rv d1"><span class="t">They believe the risk is <span class="hl">falling behind</span></span></li>
+        <li class="rv d2"><span class="t">In reality, the risk is <span class="hl">looking indistinguishable, incoherent, cookie-cutter or off-brand all together</span></span></li>
+      </ul>
+      <div class="bottom-line rv">
+        <div class="lbl">The bottom line?</div>
+        <p>“AI doesn’t replace creative leadership. It exposes the absence of it.”</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio" id="portfolio">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="rv">Port<span>.</span><br>folio</h2>
+      <p class="rv d2"><b>FRESH THINKING - RobGlennieConsulting &gt;</b> I help clients to 'Think Inside the Box' TM working with owners and decision-makers to help them determine what they do best... then, tell the world about it.</p>
+    </div>
+    <div class="tabs rv" role="tablist">
+      <button class="tab on" data-p="logos"><img data-img="02ef4997-9182-4ea1-8550-de01013fa6ae/RGC_WEBSITE_2026_LOGOS_Square_RGC_WHITE-Box.png" alt="">LOGOs</button>
+      <button class="tab" data-p="work"><img data-img="1b5683a1-b27f-40f8-8dcf-1061809ae3fe/RGC_WEBSITE_2026_LOGOS_Square_thinking-gel.png" alt="">Client Work</button>
+      <button class="tab" data-p="ai"><img data-img="9185c6ae-d443-4bc3-a8a1-138b356db2da/Robbie-in-Suit-with-Smile_SQUARECUT.png" alt="">AI Facilitation</button>
+    </div>
+
+    <div class="pane on" id="logos">
+      <div class="logo-sheet hov" id="logoSheet"></div>
+    </div>
+
+    <div class="pane" id="work">
+      <div class="work-grid hov" id="workGrid"></div>
+    </div>
+
+    <div class="pane" id="ai">
+      <div class="ai-wrap">
+        <div class="orig">
+          <img data-img="c3a4c0e9-ed4e-41ef-9baf-5421d01e14ca/Robbie_2091.JPG" alt="Actual original photo of Robbie">
+          <p class="note"><b>THE ORIGINAL</b>Actual ORIGINAL Photo -all the rest are AI generated (with a little help from the Human - me!)</p>
+        </div>
+        <div>
+          <div class="ai-strip">
+            <figure><img data-img="9185c6ae-d443-4bc3-a8a1-138b356db2da/Robbie-in-Suit-with-Smile_SQUARECUT.png" alt="AI generated portrait of Robbie smiling in a suit"></figure>
+            <figure><img data-img="8e411956-beb9-4eeb-9102-968b2d60f44d/Robbie+in+Suit.png" alt="AI generated portrait of Robbie in a suit"></figure>
+            <figure><img data-img="bccddc47-ddfd-4226-880b-6f48f8cca578/IMG_2601.jpeg" alt="AI generated image of Robbie"></figure>
+            <figure><img data-img="88a75fc9-4aa0-4d28-b0ca-6b35c1b1578d/IMG_2692.PNG" alt="AI generated image of Robbie in a Blue Jays jersey"></figure>
+            <figure><img data-img="467cd411-135e-4c59-8056-693f90130a79/with-Tube.png" alt="AI generated image of Robbie with thinking gel"></figure>
+            <figure><img data-img="375f4008-a729-4f26-91b6-ea2cc0f88280/Decades-of-Experience_POSTER_24x36.png" alt="Decades of Experience poster"></figure>
+          </div>
+          <div class="ai-cta">
+            <span>FOLLOW me for more…</span>
+            <a class="btn mag" href="https://www.robglennieconsulting.com/al-examples">MORE AI <span class="ar">→</span></a>
+            <a class="btn ghost" href="#contact-me">Contact</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGO MARQUEE -->
+<div class="marq" aria-hidden="true"><div class="track" id="marq"></div></div>
+
+<!-- THINK INSIDE THE BOX -->
+<section class="box">
+  <div class="wrap">
+    <div class="box-vis rv">
+      <div class="cube"><img data-img="3df9e551-1770-4fbf-bcff-a19009d6eaaa/thinking-gel_HERO_2025_close-cut.png" alt="Thinking gel" id="boxTube"></div>
+      <span class="tm">Think Inside the Box TM</span>
+    </div>
+    <div>
+      <div class="kick rv">Schedule a complimentary consultation</div>
+      <h2 class="rv d1">I help clients to <em>‘Think Inside the Box’</em> TM</h2>
+      <p class="rv d2">working with owners and decision-makers to help them see the forest for the trees to determine the unique things that they do best. Develop and hone that difference, and then...</p>
+      <p class="tell rv d3">…tell the world about it.</p>
+      <a class="btn mag rv d4" href="https://www.robglennieconsulting.com/appointments">GRAB SOME TIME <span class="ar">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div>
+      <h2 class="rv">About <span>Robbie</span></h2>
+      <p class="lead rv d1">As an award-winning Creative Director, Art Director, Illustrator, and Ad Agency owner, Robbie produces iconic branding, marketing and identities.</p>
+      <div class="clients-lbl rv">With ad agencies in Vancouver and Winnipeg - clients have included:</div>
+      <p class="clients rv d1" id="clients"></p>
+      <p class="now rv">These days, Robbie’s visionary focus helps brands and businesses ‘Think INSIDE The Box,’ with breakthrough strategies to optimize latent assets and catalyze new growth.</p>
+      <div class="prof rv">
+        <h4>Proficiencies:</h4>
+        <div class="chips">
+          <span>New AI Facilitator</span><span>Naming and Branding</span><span>Film Marketing</span><span>Identity</span><span>Advertising</span><span>Real Estate Development</span><span>Packaging</span><span>Strategic Planning</span><span>Brand Stewardship</span>
+        </div>
+      </div>
+    </div>
+    <div class="poster rv d2">
+      <img data-img="375f4008-a729-4f26-91b6-ea2cc0f88280/Decades-of-Experience_POSTER_24x36.png" alt="Decades of Experience poster" id="poster">
+      <a class="btn mag" href="https://www.robglennieconsulting.com/decades-of-experience">My FRESHEST THINKING <span class="ar">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- DREAM / BUILD / GROW / SELL -->
+<section class="dream" id="dream">
+  <div class="dream-pin">
+    <div class="dream-words" id="dw">
+      <div class="on">Dream it.</div><div>Build it.</div><div>Grow it.</div><div>Sell it.</div>
+    </div>
+    <div class="dream-pics" id="dp">
+      <img class="on" data-img="8d7eecf5-de43-495a-be4a-7e61efb25477/IMG_2273.PNG" alt="Thinking gel on a balcony overlooking Vancouver">
+      <img data-img="48c5572c-8ef7-46e2-8204-216e73b3f8f3/IMG_2275.PNG" alt="Thinking gel campaign image">
+      <img data-img="1a57aef4-9733-49fc-9ae8-b8e1ca8ea442/IMG_2269.png" alt="Thinking gel campaign image">
+      <img data-img="124bd7a4-3841-4769-84da-4415a79b7f16/with-Tube.png" alt="Robbie with thinking gel">
+    </div>
+    <div class="gel-line">
+      <q>Get out your thinking gel.</q>
+      <a class="btn mag" href="#contact-me">CONTACT ME <span class="ar">→</span></a>
+    </div>
+    <div class="prog" id="prog"><i class="on"></i><i></i><i></i><i></i></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact-me">
+  <div class="c-ring"></div><div class="c-ring two"></div>
+  <div class="wrap">
+    <div>
+      <div class="lbl rv">Contact Me</div>
+      <h2 class="rv d1">Interested in working together?</h2>
+      <p class="q rv d2">IT’S TIME FOR SOME FRESH THINKING !</p>
+      <p class="rv d2">“Get out your thinking gel !”<br>Let’s collaborate and see what we can accomplish.</p>
+      <div class="cinfo rv d3">
+        <div><small>Email</small><a href="mailto:Rob@RobGlennieConsulting.com">Rob@RobGlennieConsulting.com</a></div>
+        <div><small>Phone (local in Vancouver)</small><a href="tel:2047998199">204-799-8199</a></div>
+        <div><small>Location</small>Caught Between Kits &amp; Shaughnessy, VANCOUVER BC CANADA</div>
+      </div>
+    </div>
+    <form class="rv d2" onsubmit="event.preventDefault();this.querySelector('button').innerHTML='THANK YOU ✓'">
+      <div class="fieldname">Name</div>
+      <div class="row">
+        <div><label>First Name <small>(required)</small></label><input required></div>
+        <div><label>Last Name <small>(required)</small></label><input required></div>
+      </div>
+      <label>Email <small>(required)</small></label><input type="email" required>
+      <label>Message <small>(required)</small></label><textarea required></textarea>
+      <button class="btn mag" type="submit">SEND <span class="ar">→</span></button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="f-logo"><img data-img="deada559-7cfa-4f69-b213-a8225b7ee2eb/RGC_LOGO_FRESH-THINKING_AI_2025.png" alt="FRESH THINKING - RobGlennieConsulting"></div>
+      <p style="margin-top:18px">FRESH THINKING - RobGlennieConsulting</p>
+    </div>
+    <div><h5>Location</h5><p>Caught Between Kits &amp; Shaughnessy<br>VANCOUVER BC CANADA</p></div>
+    <div><h5>Contact</h5><p><a href="mailto:Rob@RobGlennieConsulting.com">Rob@RobGlennieConsulting.com</a><br><a href="tel:2047998199">204-799-8199</a><br>(local in Vancouver)</p></div>
+    <div><h5>Menu</h5><ul><li><a href="#">Home</a></li><li><a href="https://www.robglennieconsulting.com/testimonials">Testimonials</a></li><li><a href="#contact-me">Contact</a></li><li><a href="https://www.robglennieconsulting.com/pay-invoice">PAY INVOICE</a></li><li><a href="https://www.robglennieconsulting.com/appointments">Book now</a></li></ul></div>
+    <div class="f-bottom"><span>© <span id="yr"></span> FRESH THINKING - RobGlennieConsulting</span><span>Get out your thinking gel!</span></div>
+  </div>
+</footer>
+
+<!-- FRESHEST THINKING card (from live site popup) -->
+<div class="fresh-card" id="fc">
+  <button aria-label="Close" onclick="this.parentNode.classList.remove('show');this.parentNode.dataset.x=1">×</button>
+  <img data-img="375f4008-a729-4f26-91b6-ea2cc0f88280/Decades-of-Experience_POSTER_24x36.png" alt="">
+  <div><h6>My FRESHEST THINKING</h6><p>CLICK here to see a Full View of the latest work.</p><a class="v" href="https://www.robglennieconsulting.com/decades-of-experience">VIEW</a></div>
+</div>
+
+<div class="cur" id="cur">VIEW</div>
+
+<script>
+const CDN='https://images.squarespace-cdn.com/content/v1/6913b338c1f3446a4defc921/';
+const S='https://www.robglennieconsulting.com';
+document.querySelectorAll('[data-img]').forEach(i=>{i.src=CDN+i.dataset.img+'?format=1000w';i.loading=i.closest('.hero,.top')?'eager':'lazy'});
+
+/* logo sheet */
+const logos=[
+ ['c886b5a1-b3ba-4222-a0c0-76da5e404f27/RGC_WEBSITE_2026_LOGOS-PAGE_FRESH-THINKING_RobGlennieConsulting_WHITE-Box.png','/fresh-thinking-robglennieconsulting','Fresh Thinking'],
+ ['fcf809d5-d4df-4f5e-a9e2-fccf34fd18b7/RGC_WEBSITE_2026_LOGOS-PAGE_BRAND-FRANK_WHITE-Box.png','/brand-frank','Brand Frank'],
+ ['7e96c110-9727-41e1-ace2-9db787228daa/RGC_WEBSITE_2026_LOGOS-PAGE_quidproQuo_WHITE-Box.png','/new-page-4','quidproQuo'],
+ ['2411831a-06db-47dc-9f4c-c00a816f326f/RGC_WEBSITE_2026_LOGOS-PAGE_ConoVision_WHITE-Box.png','/conovision','ConoVision'],
+ ['ec7898b8-694c-4b2f-915c-6086a6b6344d/RGC_WEBSITE_2026_LOGOS-PAGE_The-BENTLEY-at-490_WHITE-Box.png','/the-bentley-at-490','The Bentley at 490'],
+ ['7df867c5-0c98-49dd-ae75-686b377b1245/RGC_WEBSITE_2026_LOGOS-PAGE_The-ALANO-Club_WHITE-Box.png','/the-alano-club','The Alano Club'],
+ ['26df0444-11c8-43c8-8df4-acb3ee4a5d5e/RGC_WEBSITE_2026_LOGOS-PAGE_BLAK-SWAN_WHITE-Box.png','/blak-swan','Bläk Swan'],
+ ['59dc3606-278c-4851-b4ba-20bdade1c92f/RGC_WEBSITE_2026_LOGOS-PAGE_2023-WHISTLER_SQUAMISH_WHITE-Box.png','/2023-squamish-whistler','2023 Squamish Whistler'],
+ ['283702bf-e695-4e11-92dc-5bd4f04857eb/RGC_WEBSITE_2026_LOGOS-PAGE_hificabinetco_WHITE-Box.png','/hificabinetco','hificabinetco'],
+ ['4a109959-6611-4408-b309-5e2eba9efc22/RGC_WEBSITE_2026_LOGOS-PAGE_ROCK-BEATS-Cancer_WHITE-Box.png','/rock-beats-cancer','Rock Beats Cancer'],
+ ['cad9a943-bdee-413e-8ac4-50b6223d6d82/RGC_WEBSITE_2026_LOGOS-PAGE_hidrate-NATURALLY_WHITE-Box.png','/hidrate-naturally','Hidrate Naturally'],
+ ['ae81ac60-0b2c-456e-bc93-bf9a9b5175c2/RGC_WEBSITE_2026_LOGOS-PAGE_mikrotunes_WHITE-Box.png','/mikrotunes','mikrotunes']];
+document.getElementById('logoSheet').innerHTML=logos.map(l=>`<a href="${S+l[1]}"><img loading="lazy" src="${CDN+l[0]}?format=750w" alt="${l[2]} logo"><span>${l[2]}</span></a>`).join('');
+document.getElementById('marq').innerHTML=[...logos,...logos].map(l=>`<img src="${CDN+l[0]}?format=300w" alt="">`).join('');
+
+/* client work */
+const work=[
+ ['2cbea7c1-6bb4-4755-9543-263d39a1d636/RGC_WEBSITE_2026_LOGOS_Square_RGC.png','/fresh-thinking-robglennieconsulting','Fresh Thinking'],
+ ['95c59ba4-11ba-4f09-9785-d0fa8ae57aa8/ROCK-BEATS-CANCER_LOGO_VERTICAL.png','/rock-beats-cancer','Rock Beats Cancer'],
+ ['54564768-cb14-4c93-be23-e49b70f8be36/BRAND-FRANK_LOGO_SquareBG.png','/brand-frank','Brand Frank'],
+ ['e2a1a524-c55a-4993-b0bb-b619f974aa31/BLAK-SWAN_LOGOs_SWAN_LOGO_MASTER.png','/blak-swan','Bläk Swan'],
+ ['17f4de03-4e8d-48c6-9544-0d172f78e6a6/RGC_WEBSITE_2026_LOGOS_Square_quidproQuo.png','/new-page-4','quidproQuo'],
+ ['770b0659-3cfd-4f6d-9980-c18f7598881e/2023-SQUAMISH-WHISTLER_LOGO_MASTER_Vertical_with-WORDMARK.png','/2023-squamish-whistler','2023 Squamish Whistler'],
+ ['12d52c9f-179a-4c10-a615-bb075f3dab7c/RGC_WEBSITE_2026_LOGOS_Square_ConoVision.png','/conovision','ConoVision'],
+ ['bf1421f7-e058-4193-b9f1-83c794f168d6/RGC_WEBSITE_2026_LOGOS_Square_Hificabinetco_Orange-Dot.png','/hificabinetco','hificabinetco'],
+ ['aa306714-25ff-4618-bf99-2b5d1f190dd2/RGC_WEBSITE_2026_LOGOS_Square_The-BENTLEY-at-490.png','/the-bentley-at-490','The Bentley at 490'],
+ ['bf3698b6-b76c-497b-b773-d0a78d79fe42/The-ALANO-Club_LOGO_2025_AVOCADO.png','/the-alano-club','The Alano Club'],
+ ['8611df8e-c157-477e-a941-f5882a9f1928/Mikrotunes_LOGO_2025.png','/mikrotunes','mikrotunes'],
+ ['0eb74486-5c23-467b-b5a8-b4f321df6205/RGC_WEBSITE_2026_LOGOS_Square_Hidrate-NATURALLY.png','/hidrate-naturally','Hidrate Naturally']];
+document.getElementById('workGrid').innerHTML=work.map(w=>`<a href="${S+w[1]}"><img loading="lazy" src="${CDN+w[0]}?format=1000w" alt="${w[2]}"></a>`).join('');
+
+/* clients list */
+const cl=["McDonald’s","Boston Pizza","WhiteSpot","General Motors","Toyota","Virgin","America West Airlines","Molsons","Labatt","Granville Island Brewing","Winnipeg Jets","Vancouver Canucks","Vancouver Grizzlies","NHL All-Star Game","the Vancouver 2010 Olympic Bid Committee","Travel Manitoba","Canadian Tourism Commission","Tourism Vancouver","Big Brothers","Partnership for a Drug-Free America"];
+document.getElementById('clients').innerHTML=cl.map(c=>`<span>${c}</span>`).join('<span class="sep">/</span>');
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+/* hero headline split */
+const h1=document.getElementById('h1');
+let idx=0;
+[...h1.childNodes].forEach(n=>{
+  if(n.nodeType===3){
+    const frag=document.createDocumentFragment();
+    n.textContent.split(/(\s+)/).forEach(t=>{
+      if(!t.trim()){frag.appendChild(document.createTextNode(t));return}
+      const w=document.createElement('span');w.className='w';
+      w.innerHTML=`<span style="transition-delay:${(idx++)*0.06}s">${t}</span>`;frag.appendChild(w)});
+    n.replaceWith(frag);
+  }else{const t=n.outerHTML;const w=document.createElement('span');w.className='w';w.innerHTML=`<span style="transition-delay:${(idx++)*0.06}s">${t}</span>`;n.replaceWith(w)}
+});
+window.addEventListener('load',()=>document.body.classList.add('loaded'));
+setTimeout(()=>document.body.classList.add('loaded'),900);
+
+/* reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('.hl').forEach(h=>h.classList.add('in'));io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+/* header + scroll effects */
+const top=document.getElementById('top'),tube=document.getElementById('tube'),fc=document.getElementById('fc');
+const dream=document.getElementById('dream'),dw=[...document.querySelectorAll('#dw div')],dp=[...document.querySelectorAll('#dp img')],pg=[...document.querySelectorAll('#prog i')];
+let mx=0,my=0;
+function onScroll(){
+  const y=scrollY;
+  top.classList.toggle('solid',y>40);
+  tube.style.transform=`translateY(${y*.35}px) rotate(${-8+y*.02+mx*4}deg) translateX(${mx*14}px)`;
+  if(y>900&&!fc.dataset.x)fc.classList.add('show');
+  if(innerWidth>1000){
+    const r=dream.getBoundingClientRect(),p=Math.min(.999,Math.max(0,-r.top/(r.height-innerHeight)));
+    const k=Math.floor(p*4);
+    dw.forEach((d,i)=>d.classList.toggle('on',i===k));dp.forEach((d,i)=>d.classList.toggle('on',i===k));pg.forEach((d,i)=>d.classList.toggle('on',i===k));
+  }
+}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+addEventListener('mousemove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5;if(scrollY<innerHeight)onScroll()});
+
+/* mobile dream: cycle */
+if(innerWidth<=1000){let k=0;setInterval(()=>{k=(k+1)%4;dw.forEach((d,i)=>d.classList.toggle('on',i===k));dp.forEach((d,i)=>d.classList.toggle('on',i===k))},2200)}
+
+/* tabs */
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===t));
+  document.querySelectorAll('.pane').forEach(p=>p.classList.toggle('on',p.id===t.dataset.p));
+});
+
+/* magnetic buttons */
+if(matchMedia('(hover:hover)').matches){
+  document.querySelectorAll('.mag').forEach(b=>{
+    b.addEventListener('mousemove',e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.25}px,${(e.clientY-r.top-r.height/2)*.35}px)`});
+    b.addEventListener('mouseleave',()=>b.style.transform='');
+  });
+  /* view cursor */
+  const cur=document.getElementById('cur');
+  addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px'});
+  document.querySelectorAll('.hov').forEach(h=>{h.addEventListener('mouseenter',()=>cur.classList.add('on'));h.addEventListener('mouseleave',()=>cur.classList.remove('on'))});
+}
+
+/* box tube wobble */
+const bt=document.getElementById('boxTube');
+addEventListener('scroll',()=>{const r=bt.getBoundingClientRect();bt.style.transform=`rotate(${6+(r.top-innerHeight/2)*.02}deg)`},{passive:true});
+
+/* mobile nav */
+const nav=document.getElementById('nav'),bg=document.getElementById('burger');
+bg.onclick=()=>nav.classList.toggle('open');
+nav.querySelectorAll('a').forEach(a=>a.onclick=()=>nav.classList.remove('open'));
+</script>
+</body>
+</html>
