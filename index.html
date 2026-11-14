@@ -202,9 +202,9 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;op
 .marq{background:var(--stone);padding:26px 0;overflow:hidden;border-block:1px solid #cbc7bd}
 .marq .track{display:flex;gap:60px;width:max-content;animation:mq 40s linear infinite;align-items:center}
 .marq .track{gap:22px;background:var(--stone)}
-.marq span{flex:none;width:200px;height:120px;background:var(--stone);overflow:hidden;display:grid;place-items:center;padding:6px 18px;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.marq span{flex:none;width:170px;height:124px;background:var(--stone);overflow:hidden;display:grid;place-items:center;padding:0;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
 .marq span:hover{transform:translateY(-5px)}
-.marq img{max-width:100%;max-height:108px;object-fit:contain;mix-blend-mode:multiply;filter:brightness(1.07) contrast(1.12)}
+.marq img{width:150px;height:150px;max-width:none;object-fit:contain;mix-blend-mode:multiply;filter:brightness(1.07) contrast(1.12)}
 .marq:hover .track{animation-play-state:paused}
 @keyframes mq{to{transform:translateX(-50%)}}
 
