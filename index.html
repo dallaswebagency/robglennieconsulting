@@ -143,7 +143,8 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;op
 .pane{display:block;padding-top:30px;margin-bottom:110px;scroll-margin-top:110px}
 .pane:last-child{margin-bottom:0}
 .ph3{display:flex;align-items:center;gap:18px;margin-bottom:34px;padding-bottom:18px;border-bottom:2px solid var(--ink)}
-.ph3 em{font-style:normal;font-size:13px;font-weight:800;letter-spacing:.15em;color:var(--green)}
+.ph3 em{width:52px;height:52px;border-radius:14px;background:var(--green);color:#fff;display:grid;place-items:center;flex:none}
+.ph3 em svg{width:26px;height:26px}
 .ph3 h3{font-family:var(--disp);font-weight:800;font-size:clamp(30px,3.4vw,52px);letter-spacing:-.03em;font-stretch:85%}
 .ph3 span{margin-left:auto;font-size:13px;font-weight:700;color:var(--grey);letter-spacing:.1em}
 
@@ -153,12 +154,13 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;op
 .lx-list{list-style:none;border-top:2px solid var(--ink);counter-reset:lx}
 .lx-list li{counter-increment:lx}
 .lx-list a{display:grid;grid-template-columns:56px 1fr auto;align-items:center;padding:16px 4px;border-bottom:1px solid #cfcbc2;font-family:var(--disp);font-size:clamp(20px,2vw,28px);font-weight:600;letter-spacing:-.02em;position:relative;overflow:hidden;transition:color .35s,padding .45s cubic-bezier(.2,.8,.2,1)}
-.lx-list a:before{content:counter(lx,decimal-leading-zero);font-family:var(--body);font-size:12px;font-weight:700;color:var(--grey);letter-spacing:.1em}
+.lx-list a:before{content:"✦";font-size:16px;color:var(--green);transition:transform .4s}
+.lx-list a.on:before{transform:rotate(90deg)}
 .lx-list a:after{content:"";position:absolute;inset:0;background:var(--green);transform:scaleY(0);transform-origin:bottom;transition:transform .45s cubic-bezier(.2,.8,.2,1);z-index:-1}
 .lx-list a i{font-style:normal;opacity:0;transform:translateX(-12px);transition:.35s}
 .lx-list a.on{color:#fff;padding-left:18px}
 .lx-list a.on:after{transform:scaleY(1)}
-.lx-list a.on:before{color:#D6F3DF}
+.lx-list a.on:before{color:#fff}
 .lx-list a.on i{opacity:1;transform:none}
 .lx-prev{position:sticky;top:120px}
 .lx-card{background:#fff;border-radius:26px;aspect-ratio:1/1;position:relative;overflow:hidden;box-shadow:0 30px 60px rgba(18,47,4,.1);transform-style:preserve-3d;transition:transform .3s ease}
@@ -266,9 +268,10 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;op
 .prof-h span{font-size:13px;font-weight:800;letter-spacing:.18em;color:var(--grey)}
 .bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:170px;gap:14px}
 .bt{position:relative;background:var(--paper);border-radius:20px;padding:24px 24px 22px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;transition:transform .45s cubic-bezier(.2,.8,.2,1),background .4s,color .4s}
-.bt:before{content:attr(data-n);font-size:13px;font-weight:800;letter-spacing:.14em;color:var(--green);transition:color .4s}
+.bt:before{content:"✦";font-size:20px;color:var(--green);transition:color .4s,transform .5s}
+.bt:hover:before{transform:rotate(90deg)}
 .bt b{font-family:var(--disp);font-weight:800;font-size:clamp(20px,1.8vw,27px);line-height:1.05;letter-spacing:-.02em;font-stretch:88%}
-.bt:after{content:"✦";position:absolute;right:22px;top:18px;font-size:20px;color:var(--green);opacity:0;transform:rotate(-90deg) scale(.4);transition:all .5s cubic-bezier(.2,.8,.2,1)}
+.bt:after{content:"→";position:absolute;right:22px;top:18px;font-size:20px;color:var(--green);opacity:0;transform:rotate(-90deg) scale(.4);transition:all .5s cubic-bezier(.2,.8,.2,1)}
 .bt:hover{transform:translateY(-6px);background:var(--forest);color:#fff}
 .bt:hover:before{color:#8FD3A4}
 .bt:hover:after{opacity:1;transform:none}
@@ -290,7 +293,8 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;op
 .acc .pn img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.12);transition:transform 1.4s cubic-bezier(.2,.8,.2,1),filter 1s;filter:grayscale(.7) brightness(.55)}
 .acc .pn.on img{transform:scale(1);filter:none}
 .acc .pn:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,rgba(18,47,4,.85))}
-.acc .num{position:absolute;top:22px;left:24px;z-index:2;color:#fff;font-weight:800;font-size:13px;letter-spacing:.15em}
+.acc .num{position:absolute;top:20px;left:20px;z-index:2;color:#fff;width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.16);backdrop-filter:blur(6px);display:grid;place-items:center;transition:background .4s}
+.acc .pn.on .num{background:var(--green)}
 .acc .w{position:absolute;z-index:2;color:#fff;font-family:var(--disp);font-weight:900;letter-spacing:-.04em;font-stretch:78%;white-space:nowrap;transition:all .9s cubic-bezier(.2,.8,.2,1)}
 .acc .pn .w{left:50%;bottom:40px;font-size:44px;transform:translateX(-50%) rotate(-90deg);transform-origin:center;bottom:50%}
 .acc .pn.on .w{left:34px;bottom:30px;font-size:clamp(56px,7vw,110px);transform:none}
@@ -512,29 +516,29 @@ footer ul a:hover,footer .f-contact a:hover{color:var(--green)}
     </div>
     <div class="seg rv" role="tablist" id="seg">
       <span class="pill" id="pill"></span>
-      <button class="tab on" data-p="logos"><img data-img="02ef4997-9182-4ea1-8550-de01013fa6ae/RGC_WEBSITE_2026_LOGOS_Square_RGC_WHITE-Box.png" alt="">LOGOs<sup>12</sup></button>
-      <button class="tab" data-p="work"><img data-img="1b5683a1-b27f-40f8-8dcf-1061809ae3fe/RGC_WEBSITE_2026_LOGOS_Square_thinking-gel.png" alt="">Client Work<sup>12</sup></button>
-      <button class="tab" data-p="ai"><img data-img="9185c6ae-d443-4bc3-a8a1-138b356db2da/Robbie-in-Suit-with-Smile_SQUARECUT.png" alt="">AI Facilitation<sup>7</sup></button>
+      <button class="tab on" data-p="logos"><img data-img="02ef4997-9182-4ea1-8550-de01013fa6ae/RGC_WEBSITE_2026_LOGOS_Square_RGC_WHITE-Box.png" alt="">LOGOs</button>
+      <button class="tab" data-p="work"><img data-img="1b5683a1-b27f-40f8-8dcf-1061809ae3fe/RGC_WEBSITE_2026_LOGOS_Square_thinking-gel.png" alt="">Client Work</button>
+      <button class="tab" data-p="ai"><img data-img="9185c6ae-d443-4bc3-a8a1-138b356db2da/Robbie-in-Suit-with-Smile_SQUARECUT.png" alt="">AI Facilitation</button>
     </div>
 
     <div class="pane" id="logos">
-      <div class="ph3 rv"><em>01</em><h3>LOGOs</h3><span>12 projects</span></div>
+      <div class="ph3 rv"><em><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></em><h3>LOGOs</h3></div>
       <div class="lx">
         <ol class="lx-list" id="lxList"></ol>
         <div class="lx-prev">
           <div class="lx-card hov" id="lxCard"></div>
-          <div class="lx-meta"><b id="lxName"></b><span id="lxNum"></span></div>
+          <div class="lx-meta"><b id="lxName"></b><a class="btn mag" id="lxGo" href="#">View <span class="ar">→</span></a></div>
         </div>
       </div>
     </div>
 
     <div class="pane" id="work">
-      <div class="ph3 rv"><em>02</em><h3>Client Work</h3><span>12 projects</span></div>
+      <div class="ph3 rv"><em><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></em><h3>Client Work</h3></div>
       <div class="work-grid hov" id="workGrid"></div>
     </div>
 
     <div class="pane" id="ai">
-      <div class="ph3 rv"><em>03</em><h3>AI Facilitation</h3><span>7 images</span></div>
+      <div class="ph3 rv"><em><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.7 1.8L21.5 17.5l-1.8.7L19 20l-.7-1.8L16.5 17.5l1.8-.7z"/></svg></em><h3>AI Facilitation</h3></div>
       <div class="ai-wrap">
         <div class="orig">
           <div class="ph"><img data-img="c3a4c0e9-ed4e-41ef-9baf-5421d01e14ca/Robbie_2091.JPG" alt="Actual original photo of Robbie"></div>
@@ -607,15 +611,15 @@ footer ul a:hover,footer .f-contact a:hover{color:var(--green)}
   <div class="prof">
     <div class="prof-h rv"><h4>Proficiencies<em>:</em></h4></div>
     <div class="bento rv d1">
-        <div class="bt big" data-n="01"><span class="new">NEW</span><b>AI Facilitator</b></div>
-        <div class="bt" data-n="02"><b>Naming and Branding</b></div>
-        <div class="bt" data-n="03"><b>Film Marketing</b></div>
-        <div class="bt" data-n="04"><b>Identity</b></div>
-        <div class="bt" data-n="05"><b>Advertising</b></div>
-        <div class="bt wide" data-n="06"><b>Real Estate Development</b></div>
-        <div class="bt" data-n="07"><b>Packaging</b></div>
-        <div class="bt" data-n="08"><b>Strategic Planning</b></div>
-        <div class="bt wide" data-n="09"><b>Brand Stewardship</b></div>
+        <div class="bt big"><span class="new">NEW</span><b>AI Facilitator</b></div>
+        <div class="bt"><b>Naming and Branding</b></div>
+        <div class="bt"><b>Film Marketing</b></div>
+        <div class="bt"><b>Identity</b></div>
+        <div class="bt"><b>Advertising</b></div>
+        <div class="bt wide"><b>Real Estate Development</b></div>
+        <div class="bt"><b>Packaging</b></div>
+        <div class="bt"><b>Strategic Planning</b></div>
+        <div class="bt wide"><b>Brand Stewardship</b></div>
     </div>
   </div>
 </section>
@@ -628,10 +632,10 @@ footer ul a:hover,footer .f-contact a:hover{color:var(--green)}
       <a class="btn mag" href="#contact-me">CONTACT ME <span class="ar">→</span></a>
     </div>
     <div class="acc rv" id="acc">
-      <div class="pn on"><img data-img="8d7eecf5-de43-495a-be4a-7e61efb25477/IMG_2273.PNG" alt="Thinking gel on a balcony overlooking Vancouver"><span class="num">01</span><span class="w">Dream it<span>.</span></span><i class="bar"></i></div>
-      <div class="pn"><img data-img="48c5572c-8ef7-46e2-8204-216e73b3f8f3/IMG_2275.PNG" alt="Thinking gel campaign image"><span class="num">02</span><span class="w">Build it<span>.</span></span><i class="bar"></i></div>
-      <div class="pn"><img data-img="1a57aef4-9733-49fc-9ae8-b8e1ca8ea442/IMG_2269.png" alt="Thinking gel campaign image"><span class="num">03</span><span class="w">Grow it<span>.</span></span><i class="bar"></i></div>
-      <div class="pn"><img data-img="124bd7a4-3841-4769-84da-4415a79b7f16/with-Tube.png" alt="Robbie with thinking gel"><span class="num">04</span><span class="w">Sell it<span>.</span></span><i class="bar"></i></div>
+      <div class="pn on"><img data-img="8d7eecf5-de43-495a-be4a-7e61efb25477/IMG_2273.PNG" alt="Thinking gel on a balcony overlooking Vancouver"><span class="num"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg></span><span class="w">Dream it<span>.</span></span><i class="bar"></i></div>
+      <div class="pn"><img data-img="48c5572c-8ef7-46e2-8204-216e73b3f8f3/IMG_2275.PNG" alt="Thinking gel campaign image"><span class="num"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V10l7-5 7 5v11"/><path d="M9 21v-6h6v6"/></svg></span><span class="w">Build it<span>.</span></span><i class="bar"></i></div>
+      <div class="pn"><img data-img="1a57aef4-9733-49fc-9ae8-b8e1ca8ea442/IMG_2269.png" alt="Thinking gel campaign image"><span class="num"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21V11"/><path d="M12 11C12 7 9 5 5 5c0 4 3 6 7 6zM12 14c0-4 3-6 7-6 0 4-3 6-7 6z"/></svg></span><span class="w">Grow it<span>.</span></span><i class="bar"></i></div>
+      <div class="pn"><img data-img="124bd7a4-3841-4769-84da-4415a79b7f16/with-Tube.png" alt="Robbie with thinking gel"><span class="num"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span><span class="w">Sell it<span>.</span></span><i class="bar"></i></div>
     </div>
   </div>
 </section>
@@ -715,7 +719,7 @@ const lxList=document.getElementById('lxList'),lxCard=document.getElementById('l
 lxList.innerHTML=logos.map((l,i)=>`<li><a href="${S+l[1]}" data-i="${i}">${l[2]}<i>→</i></a></li>`).join('');
 lxCard.innerHTML=logos.map((l,i)=>`<img src="${CDN+l[0]}?format=750w" alt="${l[2]} logo" data-i="${i}">`).join('');
 const lxA=[...lxList.querySelectorAll('a')],lxI=[...lxCard.querySelectorAll('img')];
-function lxSet(i){lxA.forEach((a,k)=>a.classList.toggle('on',k===i));lxI.forEach((m,k)=>m.classList.toggle('on',k===i));document.getElementById('lxName').textContent=logos[i][2];document.getElementById('lxNum').textContent=String(i+1).padStart(2,'0')+' / '+logos.length;lxCard.onclick=()=>location.href=S+logos[i][1];}
+function lxSet(i){lxA.forEach((a,k)=>a.classList.toggle('on',k===i));lxI.forEach((m,k)=>m.classList.toggle('on',k===i));document.getElementById('lxName').textContent=logos[i][2];lxCard.onclick=()=>location.href=S+logos[i][1];document.getElementById('lxGo').href=S+logos[i][1];}
 lxA.forEach((a,i)=>{a.addEventListener('mouseenter',()=>lxSet(i));a.addEventListener('focus',()=>lxSet(i))});lxSet(0);
 lxCard.addEventListener('mousemove',e=>{const r=lxCard.getBoundingClientRect();lxCard.style.transform=`rotateY(${((e.clientX-r.left)/r.width-.5)*10}deg) rotateX(${-((e.clientY-r.top)/r.height-.5)*10}deg)`});
 lxCard.addEventListener('mouseleave',()=>lxCard.style.transform='');
