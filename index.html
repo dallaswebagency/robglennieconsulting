@@ -262,13 +262,27 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;op
 .clist b:last-child:after{display:none}
 .clist b:hover{color:var(--green)}
 .ticker .cap span{font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:800;color:#8FD3A4}
-.prof{width:min(1240px,92vw);margin:0 auto;padding:70px 0 120px;display:grid;grid-template-columns:260px 1fr;gap:40px}
-.prof h4{font-family:var(--disp);font-size:28px;font-weight:800;letter-spacing:-.02em}
-.chips{display:grid;grid-template-columns:repeat(3,1fr);border-top:1.5px solid var(--ink)}
-.chips span{padding:20px 6px;border-bottom:1px solid #ddd;font-weight:600;font-size:17px;display:flex;gap:12px;align-items:center;transition:padding .35s,color .35s}
-.chips span:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green);flex:none}
-.chips span:hover{padding-left:16px;color:var(--green)}
-.chips span:first-child{color:var(--green);font-weight:800}
+
+.prof{width:min(1240px,92vw);margin:0 auto;padding:110px 0 130px}
+.prof-h{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:34px;flex-wrap:wrap}
+.prof-h h4{font-family:var(--disp);font-weight:900;font-size:clamp(44px,5vw,78px);letter-spacing:-.045em;line-height:.9;font-stretch:76%}
+.prof-h h4 em{font-family:var(--serif);font-weight:400;font-style:italic;color:var(--green);font-stretch:100%}
+.prof-h span{font-size:13px;font-weight:800;letter-spacing:.18em;color:var(--grey)}
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:170px;gap:14px}
+.bt{position:relative;background:var(--paper);border-radius:20px;padding:24px 24px 22px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;transition:transform .45s cubic-bezier(.2,.8,.2,1),background .4s,color .4s}
+.bt:before{content:attr(data-n);font-size:13px;font-weight:800;letter-spacing:.14em;color:var(--green);transition:color .4s}
+.bt b{font-family:var(--disp);font-weight:800;font-size:clamp(20px,1.8vw,27px);line-height:1.05;letter-spacing:-.02em;font-stretch:88%}
+.bt:after{content:"✦";position:absolute;right:22px;top:18px;font-size:20px;color:var(--green);opacity:0;transform:rotate(-90deg) scale(.4);transition:all .5s cubic-bezier(.2,.8,.2,1)}
+.bt:hover{transform:translateY(-6px);background:var(--forest);color:#fff}
+.bt:hover:before{color:#8FD3A4}
+.bt:hover:after{opacity:1;transform:none}
+.bt.big{grid-column:span 2;grid-row:span 2;background:var(--green);color:#fff;padding:34px}
+.bt.big:before{color:#E7F7EC}
+.bt.big b{font-size:clamp(40px,4.6vw,72px);font-stretch:74%;letter-spacing:-.04em;line-height:.92}
+.bt.big .new{position:absolute;right:30px;top:30px;background:#fff;color:var(--green);font-size:12px;font-weight:800;letter-spacing:.2em;padding:8px 14px;border-radius:99px}
+.bt.big:hover{background:var(--moss)}
+.bt.big:after{display:none}
+.bt.wide{grid-column:span 2}
 
 /* ---------- dream ---------- */
 .dream{background:var(--paper);padding:130px 0 120px}
@@ -372,9 +386,7 @@ footer ul a:hover,footer .f-contact a:hover{color:var(--green)}
   .hero .wrap,.ai-wrap,.ab-top,.c-grid,.box .wrap{grid-template-columns:1fr}
   .ab-photo{max-width:440px}
     .ab-photo .badge{right:0;width:120px;height:120px;font-size:16px}
-  .prof{grid-template-columns:1fr}
-  .chips{grid-template-columns:repeat(2,1fr)}
-  .acc{flex-direction:column;height:auto}
+      .acc{flex-direction:column;height:auto}
   .acc .pn{height:90px;flex:none!important;transition:height 1s cubic-bezier(.2,.8,.2,1)}
   .acc .pn.on{height:440px}
   .acc .pn .w{transform:translateX(-50%);bottom:24px;font-size:34px}
@@ -410,8 +422,7 @@ footer ul a:hover,footer .f-contact a:hover{color:var(--green)}
   form{padding:30px}
   form .row{grid-template-columns:1fr}
   .f-main{grid-template-columns:1fr}
-  .chips{grid-template-columns:1fr}
-  .acc .pn.on .w{font-size:48px}
+    .acc .pn.on .w{font-size:48px}
   .fresh-card{left:12px;right:12px;width:auto}
   .problem{padding-top:90px}
   }
@@ -601,8 +612,18 @@ footer ul a:hover,footer .f-contact a:hover{color:var(--green)}
     <div class="clist" id="clist"></div>
   </div>
   <div class="prof">
-    <h4 class="rv">Proficiencies:</h4>
-    <div class="chips rv d1"><span>New AI Facilitator</span><span>Naming and Branding</span><span>Film Marketing</span><span>Identity</span><span>Advertising</span><span>Real Estate Development</span><span>Packaging</span><span>Strategic Planning</span><span>Brand Stewardship</span></div>
+    <div class="prof-h rv"><h4>Proficiencies<em>:</em></h4><span>09 DISCIPLINES</span></div>
+    <div class="bento rv d1">
+        <div class="bt big" data-n="01"><span class="new">NEW</span><b>AI Facilitator</b></div>
+        <div class="bt" data-n="02"><b>Naming and Branding</b></div>
+        <div class="bt" data-n="03"><b>Film Marketing</b></div>
+        <div class="bt" data-n="04"><b>Identity</b></div>
+        <div class="bt" data-n="05"><b>Advertising</b></div>
+        <div class="bt wide" data-n="06"><b>Real Estate Development</b></div>
+        <div class="bt" data-n="07"><b>Packaging</b></div>
+        <div class="bt" data-n="08"><b>Strategic Planning</b></div>
+        <div class="bt wide" data-n="09"><b>Brand Stewardship</b></div>
+    </div>
   </div>
 </section>
 
