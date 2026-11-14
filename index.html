@@ -128,8 +128,13 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;op
 .tab:hover img{transform:rotate(-12deg) scale(1.08)}
 .tab sup{font-family:var(--body);font-size:11px;font-weight:700;opacity:.55;margin-left:2px}
 .tab.on{color:#fff}
-.pane{display:none}
-.pane.on{display:block;animation:paneIn .7s cubic-bezier(.2,.8,.2,1)}
+.pane{display:block;padding-top:30px;margin-bottom:110px;scroll-margin-top:110px}
+.pane:last-child{margin-bottom:0}
+.ph3{display:flex;align-items:center;gap:18px;margin-bottom:34px;padding-bottom:18px;border-bottom:2px solid var(--ink)}
+.ph3 em{font-style:normal;font-size:13px;font-weight:800;letter-spacing:.15em;color:var(--green)}
+.ph3 h3{font-family:var(--disp);font-weight:800;font-size:clamp(30px,3.4vw,52px);letter-spacing:-.03em;font-stretch:85%}
+.ph3 span{margin-left:auto;font-size:13px;font-weight:700;color:var(--grey);letter-spacing:.1em}
+.seg{position:sticky;top:96px;z-index:20}
 @keyframes paneIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
 /* logos index + preview */
 .lx{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
@@ -496,7 +501,8 @@ footer ul a:hover,footer .f-contact a:hover{color:var(--green)}
       <button class="tab" data-p="ai"><img data-img="9185c6ae-d443-4bc3-a8a1-138b356db2da/Robbie-in-Suit-with-Smile_SQUARECUT.png" alt="">AI Facilitation<sup>7</sup></button>
     </div>
 
-    <div class="pane on" id="logos">
+    <div class="pane" id="logos">
+      <div class="ph3 rv"><em>01</em><h3>LOGOs</h3><span>12 projects</span></div>
       <div class="lx">
         <ol class="lx-list" id="lxList"></ol>
         <div class="lx-prev">
@@ -507,10 +513,12 @@ footer ul a:hover,footer .f-contact a:hover{color:var(--green)}
     </div>
 
     <div class="pane" id="work">
+      <div class="ph3 rv"><em>02</em><h3>Client Work</h3><span>12 projects</span></div>
       <div class="work-grid hov" id="workGrid"></div>
     </div>
 
     <div class="pane" id="ai">
+      <div class="ph3 rv"><em>03</em><h3>AI Facilitation</h3><span>7 images</span></div>
       <div class="ai-wrap">
         <div class="orig">
           <div class="ph"><img data-img="c3a4c0e9-ed4e-41ef-9baf-5421d01e14ca/Robbie_2091.JPG" alt="Actual original photo of Robbie"></div>
@@ -752,11 +760,11 @@ document.getElementById('acc').addEventListener('mouseleave',accAuto);accAuto();
 /* tabs with sliding pill */
 const pill=document.getElementById('pill');
 function movePill(t){pill.style.left=t.offsetLeft+'px';pill.style.width=t.offsetWidth+'px'}
-document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{
-  document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===t));
-  document.querySelectorAll('.pane').forEach(p=>p.classList.toggle('on',p.id===t.dataset.p));
-  movePill(t);
-});
+const tabs=[...document.querySelectorAll('.tab')];
+function setTab(t){tabs.forEach(x=>x.classList.toggle('on',x===t));movePill(t)}
+tabs.forEach(t=>t.onclick=()=>{setTab(t);document.getElementById(t.dataset.p).scrollIntoView({behavior:'smooth'})});
+const pio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)setTab(tabs.find(t=>t.dataset.p===e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+document.querySelectorAll('.pane').forEach(p=>pio.observe(p));
 const firstTab=document.querySelector('.tab.on');movePill(firstTab);addEventListener('load',()=>movePill(document.querySelector('.tab.on')));addEventListener('resize',()=>movePill(document.querySelector('.tab.on')));
 /* portfolio title: letter weight follows cursor */
 const pt=document.getElementById('pfTitle');
