@@ -186,6 +186,9 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;op
 .ai-strip figure:hover img{transform:scale(1.04)}
 .ai-strip figure:after{content:"AI";position:absolute;top:10px;right:10px;font-size:11px;font-weight:700;background:rgba(255,255,255,.9);padding:4px 9px;border-radius:99px;letter-spacing:.1em}
 /* lightbox */
+.decades{display:block;margin-top:80px;border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 30px 70px rgba(0,0,0,.12)}
+.decades img{width:100%;height:auto;display:block;transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.decades:hover img{transform:scale(1.015)}
 .lb{position:fixed;inset:0;z-index:200;background:rgba(10,20,4,.92);display:grid;place-items:center;opacity:0;pointer-events:none;transition:opacity .4s;padding:4vw}
 .lb.on{opacity:1;pointer-events:auto}
 .lb img{max-width:100%;max-height:86vh;object-fit:contain;border-radius:8px;transform:scale(.94);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
@@ -536,7 +539,6 @@ footer ul a:hover,footer .f-contact a:hover{color:var(--green)}
             <figure><img data-img="bccddc47-ddfd-4226-880b-6f48f8cca578/IMG_2601.jpeg" alt="AI generated image of Robbie"></figure>
             <figure><img data-img="88a75fc9-4aa0-4d28-b0ca-6b35c1b1578d/IMG_2692.PNG" alt="AI generated image of Robbie in a Blue Jays jersey"></figure>
             <figure><img data-img="467cd411-135e-4c59-8056-693f90130a79/with-Tube.png" alt="AI generated image of Robbie with thinking gel"></figure>
-            <figure><img data-img="375f4008-a729-4f26-91b6-ea2cc0f88280/Decades-of-Experience_POSTER_24x36.png" alt="Decades of Experience poster"></figure>
           </div>
           <div class="ai-cta">
             <span>FOLLOW me for more…</span>
@@ -545,6 +547,7 @@ footer ul a:hover,footer .f-contact a:hover{color:var(--green)}
           </div>
         </div>
       </div>
+      <a class="decades rv" href="https://www.robglennieconsulting.com/decades-of-experience"><img data-img="375f4008-a729-4f26-91b6-ea2cc0f88280/Decades-of-Experience_POSTER_24x36.png" alt="Just my ‘magination runnin’ away with me! Featuring decades of experience."></a>
     </div>
   </div>
 </section>
@@ -672,7 +675,7 @@ footer ul a:hover,footer .f-contact a:hover{color:var(--green)}
 (()=>{
 const CDN='https://images.squarespace-cdn.com/content/v1/6913b338c1f3446a4defc921/';
 const S='https://www.robglennieconsulting.com';
-document.querySelectorAll('[data-img]').forEach(i=>{i.src=CDN+i.dataset.img+'?format=1000w';i.loading=i.closest('.hero,.top')?'eager':'lazy'});
+document.querySelectorAll('[data-img]').forEach(i=>{i.src=CDN+i.dataset.img+(i.closest('.decades')?'?format=2500w':'?format=1000w');i.loading=i.closest('.hero,.top')?'eager':'lazy'});
 
 /* logo sheet */
 const logos=[
