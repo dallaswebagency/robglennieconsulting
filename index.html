@@ -257,7 +257,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;op
 .prof-h h4{font-family:var(--disp);font-weight:900;font-size:clamp(44px,5vw,78px);letter-spacing:-.045em;line-height:.9;font-stretch:76%}
 .prof-h h4 em{font-family:var(--serif);font-weight:400;font-style:italic;color:var(--green);font-stretch:100%}
 .prof-h span{font-size:13px;font-weight:800;letter-spacing:.18em;color:var(--grey)}
-.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:170px;gap:14px}
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:14px}
 .bt{position:relative;background:var(--paper);border-radius:20px;padding:24px 24px 22px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;transition:transform .45s cubic-bezier(.2,.8,.2,1),background .4s,color .4s}
 .bt:before{content:"✦";font-size:20px;color:var(--green);transition:color .4s,transform .5s}
 .bt:hover:before{transform:rotate(90deg)}
@@ -273,6 +273,20 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;op
 .bt.big:hover{background:var(--moss)}
 .bt.big:after{display:none}
 .bt.wide{grid-column:span 2}
+.bt{color:#fff;background:var(--forest)}
+.bt .bgi{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;z-index:0;transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.bt .shade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(18,47,4,.15) 0%,rgba(18,47,4,.55) 50%,rgba(18,47,4,.92) 100%);transition:background .5s}
+.bt b,.bt .new{position:relative;z-index:2}
+.bt:before,.bt:after{z-index:2;position:relative}
+.bt:after{position:absolute}
+.bt:before{color:#8FD3A4}
+.bt:hover .bgi{transform:scale(1.08)}
+.bt:hover .shade{background:linear-gradient(180deg,rgba(32,157,80,.35) 0%,rgba(32,157,80,.7) 55%,rgba(18,47,4,.95) 100%)}
+.bt:hover{background:var(--forest)}
+.bt.big{background:var(--forest)}
+.bt.big .bgi{object-position:50% 20%}
+.bt.big:hover{background:var(--forest)}
+
 
 .ticker{margin-top:130px;background:var(--forest);color:#fff;padding:110px 0 100px;position:relative;overflow:hidden}
 .ticker:before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;border:2px solid rgba(255,255,255,.06);left:-180px;bottom:-260px}
@@ -627,15 +641,15 @@ footer ul a:hover,footer .f-contact a:hover{color:var(--green)}
   <div class="prof">
     <div class="prof-h rv"><h4>Proficiencies<em>:</em></h4></div>
     <div class="bento rv d1">
-        <div class="bt big"><span class="new">NEW</span><b>AI Facilitator</b></div>
-        <div class="bt wide"><b>Naming and Branding</b></div>
-        <div class="bt"><b>Film Marketing</b></div>
-        <div class="bt"><b>Identity</b></div>
-        <div class="bt"><b>Advertising</b></div>
-        <div class="bt wide"><b>Real Estate Development</b></div>
-        <div class="bt"><b>Packaging</b></div>
-        <div class="bt wide"><b>Strategic Planning</b></div>
-        <div class="bt wide"><b>Brand Stewardship</b></div>
+        <div class="bt big"><img class="bgi" data-img="9185c6ae-d443-4bc3-a8a1-138b356db2da/Robbie-in-Suit-with-Smile_SQUARECUT.png" alt=""><span class="shade"></span><span class="new">NEW</span><b>AI Facilitator</b></div>
+        <div class="bt wide"><img class="bgi" data-img="8ad947e1-8cf5-4716-8cc5-7638803196fb/thinking-gel_HERO_1920x1080.png" alt=""><span class="shade"></span><b>Naming and Branding</b></div>
+        <div class="bt"><img class="bgi" data-img="375f4008-a729-4f26-91b6-ea2cc0f88280/Decades-of-Experience_POSTER_24x36.png" alt=""><span class="shade"></span><b>Film Marketing</b></div>
+        <div class="bt"><img class="bgi" data-img="e2a1a524-c55a-4993-b0bb-b619f974aa31/BLAK-SWAN_LOGOs_SWAN_LOGO_MASTER.png" alt=""><span class="shade"></span><b>Identity</b></div>
+        <div class="bt"><img class="bgi" data-img="8d7eecf5-de43-495a-be4a-7e61efb25477/IMG_2273.PNG" alt=""><span class="shade"></span><b>Advertising</b></div>
+        <div class="bt wide"><img class="bgi" data-img="aa306714-25ff-4618-bf99-2b5d1f190dd2/RGC_WEBSITE_2026_LOGOS_Square_The-BENTLEY-at-490.png" alt=""><span class="shade"></span><b>Real Estate Development</b></div>
+        <div class="bt"><img class="bgi" data-img="3df9e551-1770-4fbf-bcff-a19009d6eaaa/thinking-gel_HERO_2025_close-cut.png" alt=""><span class="shade"></span><b>Packaging</b></div>
+        <div class="bt wide"><img class="bgi" data-img="1a57aef4-9733-49fc-9ae8-b8e1ca8ea442/IMG_2269.png" alt=""><span class="shade"></span><b>Strategic Planning</b></div>
+        <div class="bt wide"><img class="bgi" data-img="48c5572c-8ef7-46e2-8204-216e73b3f8f3/IMG_2275.PNG" alt=""><span class="shade"></span><b>Brand Stewardship</b></div>
     </div>
   </div>
 </section>
