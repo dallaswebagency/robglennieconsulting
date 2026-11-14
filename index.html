@@ -206,28 +206,28 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;op
 @keyframes mq{to{transform:translateX(-50%)}}
 
 /* ---------- inside the box ---------- */
-.box{padding:150px 0 130px;position:relative}
-.bx{position:relative;max-width:1060px;margin:0 auto;padding:90px 80px 80px}
-.bx .edge{position:absolute;background:var(--ink);transition:transform 1.2s cubic-bezier(.7,0,.2,1)}
-.bx .t{top:0;left:0;right:0;height:3px;transform:scaleX(0);transform-origin:left}
-.bx .r{top:0;right:0;bottom:0;width:3px;transform:scaleY(0);transform-origin:top;transition-delay:.35s}
-.bx .b{bottom:0;left:0;right:0;height:3px;transform:scaleX(0);transform-origin:right;transition-delay:.7s}
-.bx .l{top:0;left:0;bottom:0;width:3px;transform:scaleY(0);transform-origin:bottom;transition-delay:1.05s}
-.bx.in .edge{transform:none}
-.bx .tube{position:absolute;right:9%;top:-210px;width:150px;transform:translateY(160px) rotate(10deg);opacity:0;transition:transform 1.4s cubic-bezier(.2,.8,.2,1) 1.6s,opacity .6s 1.6s;z-index:-1;filter:drop-shadow(16px 22px 20px rgba(0,0,0,.18))}
-.bx.in .tube{transform:rotate(10deg);opacity:1}
-.bx .stamp{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.2em;font-weight:800;text-transform:uppercase;border:2px solid var(--green);color:var(--green);padding:8px 14px;border-radius:6px;transform:rotate(-2deg);margin-bottom:30px}
-.bx h2{font-family:var(--disp);font-weight:800;font-size:clamp(40px,5.6vw,86px);line-height:.95;letter-spacing:-.035em;margin-bottom:34px;font-stretch:88%}
-.bx h2 em{font-family:var(--serif);font-weight:400;font-style:italic;color:var(--green);font-stretch:100%}
-.bx h2 sup{font-size:.25em;vertical-align:super;font-family:var(--body);letter-spacing:.1em}
-.bx-cols{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:end}
-.bx p{font-size:19px;line-height:1.7}
-.bx .forest{font-family:var(--serif);font-style:italic;color:var(--moss)}
-.out{display:flex;align-items:center;gap:22px;justify-content:flex-end;margin:-28px 6% 0 0;position:relative;z-index:2}
-.out .arrow{width:110px;height:60px}
-.out .arrow path{fill:none;stroke:var(--green);stroke-width:2.5;stroke-dasharray:200;stroke-dashoffset:200;transition:stroke-dashoffset 1.2s ease 2s}
-.out.in .arrow path{stroke-dashoffset:0}
-.out .tell{font-family:var(--serif);font-style:italic;font-size:clamp(30px,3.4vw,50px);color:var(--ink);background:var(--paper);padding:0 16px}
+.box{padding:140px 0 130px;position:relative}
+.box .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:70px;align-items:center}
+.bx-txt h2{font-family:var(--disp);font-weight:900;font-size:clamp(42px,5.4vw,84px);line-height:.92;letter-spacing:-.04em;font-stretch:76%;margin-bottom:34px}
+.bx-txt h2 .inbox{display:inline-block;font-family:var(--serif);font-weight:400;font-style:italic;color:var(--green);font-stretch:100%;letter-spacing:-.02em;border:3px solid var(--ink);padding:0 .22em .06em;margin-top:.1em;position:relative}
+.bx-txt h2 .inbox:after{content:"";position:absolute;inset:-3px;border:3px solid var(--green);transform:translate(10px,10px);z-index:-1;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.bx-txt h2:hover .inbox:after{transform:translate(0,0)}
+.bx-txt h2 sup{font-size:.22em;vertical-align:super;font-family:var(--body);letter-spacing:.1em;font-weight:800}
+.bx-txt p{font-size:19px;line-height:1.7;max-width:560px}
+.bx-txt .forest{font-family:var(--serif);font-style:italic;color:var(--moss)}
+.bx-txt .tell{display:flex;align-items:center;gap:18px;margin-top:30px;font-family:var(--serif);font-style:italic;font-size:clamp(28px,3vw,44px)}
+.bx-txt .tell:before{content:"";width:60px;height:2px;background:var(--green)}
+.ticket{position:relative;background:var(--forest);color:#fff;border-radius:26px;padding:40px 38px 34px;box-shadow:0 40px 70px rgba(18,47,4,.28);transform:rotate(2deg);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.ticket:hover{transform:rotate(0) translateY(-6px)}
+.ticket .cut{position:absolute;left:0;right:0;top:62%;border-top:2px dashed rgba(255,255,255,.25)}
+.ticket .cut:before,.ticket .cut:after{content:"";position:absolute;top:-17px;width:32px;height:32px;border-radius:50%;background:var(--paper)}
+.ticket .cut:before{left:-17px}.ticket .cut:after{right:-17px}
+.ticket .tag{display:inline-block;background:var(--green);font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;padding:7px 12px;border-radius:99px;margin-bottom:20px}
+.ticket h3{font-family:var(--disp);font-weight:800;font-size:clamp(28px,2.6vw,38px);line-height:1.02;letter-spacing:-.025em;max-width:12ch}
+.ticket img{position:absolute;right:20px;top:-60px;width:92px;transform:rotate(14deg);filter:drop-shadow(10px 16px 16px rgba(0,0,0,.3))}
+.ticket .bot{margin-top:86px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.ticket .bot span{font-family:var(--serif);font-style:italic;font-size:20px;color:#B9DDBF}
+.ticket .btn:hover{background:#fff;color:var(--forest)}
 
 /* ---------- about ---------- */
 .about{background:#fff;padding:140px 0 0;position:relative;overflow:hidden}
@@ -363,11 +363,9 @@ footer ul a:hover,footer .f-contact a:hover{color:var(--green)}
   .nav{position:fixed;inset:0;background:var(--paper);flex-direction:column;justify-content:center;font-size:24px;gap:26px;transform:translateY(-100%);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
   .nav.open{transform:none}
   .burger{display:block;position:relative;z-index:60}
-  .hero .wrap,.ai-wrap,.ab-top,.c-grid,.bx-cols{grid-template-columns:1fr}
-  .bx{padding:70px 30px 50px}
-  .bx .tube{width:100px;top:-150px}
-  .out{justify-content:flex-start;margin:20px 0 0}
+  .hero .wrap,.ai-wrap,.ab-top,.c-grid,.box .wrap{grid-template-columns:1fr}
   .ab-photo{max-width:440px}
+  .ticket{transform:none;margin-top:40px}
   .ab-photo .badge{right:0;width:120px;height:120px;font-size:16px}
   .prof{grid-template-columns:1fr}
   .chips{grid-template-columns:repeat(2,1fr)}
@@ -559,19 +557,17 @@ footer ul a:hover,footer .f-contact a:hover{color:var(--green)}
 <!-- THINK INSIDE THE BOX -->
 <section class="box">
   <div class="wrap">
-    <div class="bx rv">
-      <span class="edge t"></span><span class="edge r"></span><span class="edge b"></span><span class="edge l"></span>
-      <img class="tube" data-img="3df9e551-1770-4fbf-bcff-a19009d6eaaa/thinking-gel_HERO_2025_close-cut.png" alt="Thinking gel">
-      <div class="stamp">✦ Schedule a complimentary consultation</div>
-      <h2>I help clients to <em>‘Think Inside the Box’</em><sup>TM</sup></h2>
-      <div class="bx-cols">
-        <p>working with owners and decision-makers to help them see <span class="forest">the forest for the trees</span> to determine the unique things that they do best. Develop and hone that difference, and then...</p>
-        <div><a class="btn mag" href="https://www.robglennieconsulting.com/appointments">GRAB SOME TIME <span class="ar">→</span></a></div>
-      </div>
+    <div class="bx-txt">
+      <h2 class="rv">I help clients to <span class="inbox">‘Think Inside the Box’</span><sup>TM</sup></h2>
+      <p class="rv d1">working with owners and decision-makers to help them see <span class="forest">the forest for the trees</span> to determine the unique things that they do best. Develop and hone that difference, and then...</p>
+      <p class="tell rv d2">…tell the world about it.</p>
     </div>
-    <div class="out rv">
-      <svg class="arrow" viewBox="0 0 110 60"><path d="M4 8 C 30 60, 70 60, 104 30 M92 26 L104 30 L98 42"/></svg>
-      <span class="tell">…tell the world about it.</span>
+    <div class="ticket rv d2">
+      <img data-img="3df9e551-1770-4fbf-bcff-a19009d6eaaa/thinking-gel_HERO_2025_close-cut.png" alt="Thinking gel">
+      <span class="tag">Complimentary</span>
+      <h3>Schedule a complimentary consultation</h3>
+      <span class="cut"></span>
+      <div class="bot"><span>Get out your thinking gel.</span><a class="btn mag" href="https://www.robglennieconsulting.com/appointments">GRAB SOME TIME <span class="ar">→</span></a></div>
     </div>
   </div>
 </section>
