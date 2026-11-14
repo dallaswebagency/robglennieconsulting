@@ -111,14 +111,15 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;op
 .logo-sheet a:hover img{transform:scale(1.06);filter:none}
 .logo-sheet a span{position:absolute;left:12px;bottom:12px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--ink);color:#fff;padding:6px 10px;border-radius:99px;transform:translateY(40px);transition:transform .4s}
 .logo-sheet a:hover span{transform:none}
-.work-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
-.work-grid a{position:relative;overflow:hidden;background:#fff;border-radius:6px}
-.work-grid a:nth-child(6n+1){grid-column:span 5;grid-row:span 2}
-.work-grid a:nth-child(6n+2),.work-grid a:nth-child(6n+3){grid-column:span 7}
-.work-grid a:nth-child(6n+4),.work-grid a:nth-child(6n+5),.work-grid a:nth-child(6n+6){grid-column:span 4}
-.work-grid img{width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
-.work-grid a:nth-child(6n+2) img,.work-grid a:nth-child(6n+3) img{aspect-ratio:16/9;object-fit:contain;background:#fff}
-.work-grid a:hover img{transform:scale(1.05)}
+.work-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.work-grid a{position:relative;background:#fff;border-radius:14px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 1px 0 rgba(0,0,0,.06);transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s}
+.work-grid a:hover{transform:translateY(-8px);box-shadow:0 24px 40px rgba(18,47,4,.12)}
+.work-grid .lg{aspect-ratio:1/1;display:grid;place-items:center;padding:16%;background:#fff}
+.work-grid img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.work-grid a:hover img{transform:scale(1.06)}
+.work-grid .nm{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-top:1px solid #eee;font-family:var(--disp);font-weight:600;font-size:15px}
+.work-grid .nm i{font-style:normal;color:var(--green);transition:transform .3s}
+.work-grid a:hover .nm i{transform:translateX(4px) rotate(-45deg)}
 .ai-wrap{display:grid;grid-template-columns:1fr 1.6fr;gap:50px;align-items:start}
 .orig{position:relative}
 .orig img{border-radius:50%;aspect-ratio:1/1;object-fit:cover;width:100%;border:10px solid #fff;box-shadow:0 20px 50px rgba(0,0,0,.12)}
@@ -259,8 +260,7 @@ footer a:hover{color:#fff}
   .photo-tape{position:relative;top:0;max-width:420px}
   .sec-head{grid-template-columns:1fr;gap:20px}
   .logo-sheet{grid-template-columns:repeat(3,1fr)}
-  .work-grid a{grid-column:span 6!important;grid-row:auto!important}
-  .work-grid img{aspect-ratio:1/1!important}
+  .work-grid{grid-template-columns:repeat(3,1fr)}
   .dream{height:auto}
   .dream-pin{position:relative;height:auto;grid-template-columns:1fr;padding:100px 0 60px;gap:40px}
   .dream-pics{height:60vh;margin:0 4vw}
@@ -270,6 +270,7 @@ footer a:hover{color:#fff}
 }
 @media (max-width:620px){
   .logo-sheet{grid-template-columns:repeat(2,1fr)}
+  .work-grid{grid-template-columns:repeat(2,1fr);gap:12px}
   .ai-strip{grid-template-columns:repeat(2,1fr)}
   .ai-strip figure{transform:none!important}
   form{padding:28px}
@@ -553,7 +554,7 @@ const work=[
  ['bf3698b6-b76c-497b-b773-d0a78d79fe42/The-ALANO-Club_LOGO_2025_AVOCADO.png','/the-alano-club','The Alano Club'],
  ['8611df8e-c157-477e-a941-f5882a9f1928/Mikrotunes_LOGO_2025.png','/mikrotunes','mikrotunes'],
  ['0eb74486-5c23-467b-b5a8-b4f321df6205/RGC_WEBSITE_2026_LOGOS_Square_Hidrate-NATURALLY.png','/hidrate-naturally','Hidrate Naturally']];
-document.getElementById('workGrid').innerHTML=work.map(w=>`<a href="${S+w[1]}"><img loading="lazy" src="${CDN+w[0]}?format=1000w" alt="${w[2]}"></a>`).join('');
+document.getElementById('workGrid').innerHTML=work.map(w=>`<a href="${S+w[1]}"><div class="lg"><img loading="lazy" src="${CDN+w[0]}?format=750w" alt="${w[2]} logo"></div><div class="nm">${w[2]}<i>→</i></div></a>`).join('');
 
 /* clients list */
 const cl=["McDonald’s","Boston Pizza","WhiteSpot","General Motors","Toyota","Virgin","America West Airlines","Molsons","Labatt","Granville Island Brewing","Winnipeg Jets","Vancouver Canucks","Vancouver Grizzlies","NHL All-Star Game","the Vancouver 2010 Olympic Bid Committee","Travel Manitoba","Canadian Tourism Commission","Tourism Vancouver","Big Brothers","Partnership for a Drug-Free America"];
