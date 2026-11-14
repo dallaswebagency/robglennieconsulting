@@ -206,19 +206,6 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;op
 
 @keyframes mq{to{transform:translateX(-50%)}}
 
-/* ---------- inside the box ---------- */
-.box{padding:140px 0 130px;position:relative}
-.box .wrap{display:block;max-width:980px}
-.bx-txt h2{font-family:var(--disp);font-weight:900;font-size:clamp(42px,5.4vw,84px);line-height:.92;letter-spacing:-.04em;font-stretch:76%;margin-bottom:34px}
-.bx-txt h2 .inbox{display:inline-block;font-family:var(--serif);font-weight:400;font-style:italic;color:var(--green);font-stretch:100%;letter-spacing:-.02em;border:3px solid var(--ink);padding:0 .22em .06em;margin-top:.1em;position:relative}
-.bx-txt h2 .inbox:after{content:"";position:absolute;inset:-3px;border:3px solid var(--green);transform:translate(10px,10px);z-index:-1;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
-.bx-txt h2:hover .inbox:after{transform:translate(0,0)}
-.bx-txt h2 sup{font-size:.22em;vertical-align:super;font-family:var(--body);letter-spacing:.1em;font-weight:800}
-.bx-txt p{font-size:19px;line-height:1.7;max-width:560px}
-.bx-txt .forest{font-family:var(--serif);font-style:italic;color:var(--moss)}
-.bx-txt .tell{display:flex;align-items:center;gap:18px;margin-top:30px;font-family:var(--serif);font-style:italic;font-size:clamp(28px,3vw,44px)}
-
-
 .consult{display:grid;grid-template-columns:1fr 1fr;min-height:640px;background:var(--forest);color:#fff;overflow:hidden}
 .consult .img{position:relative;overflow:hidden}
 .consult .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 12%;transform:scale(1.12);transition:transform 1.8s cubic-bezier(.2,.8,.2,1)}
@@ -407,7 +394,7 @@ footer ul a:hover,footer .f-contact a:hover{color:var(--green)}
   .nav{position:fixed;inset:0;background:var(--paper);flex-direction:column;justify-content:center;font-size:24px;gap:26px;transform:translateY(-100%);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
   .nav.open{transform:none}
   .burger{display:block;position:relative;z-index:60}
-  .hero .wrap,.ai-wrap,.ab-top,.c-grid,.box .wrap{grid-template-columns:1fr}
+  .hero .wrap,.ai-wrap,.ab-top,.c-grid
   .ab-photo{max-width:440px}
     .ab-photo .badge{left:0;width:120px;height:120px;font-size:16px}
       .acc{flex-direction:column;height:auto}
@@ -590,17 +577,6 @@ footer ul a:hover,footer .f-contact a:hover{color:var(--green)}
 
 <div class="lb" id="lb"><button class="x" aria-label="Close">×</button><button class="pv" aria-label="Previous">←</button><img alt=""><button class="nx" aria-label="Next">→</button></div>
 
-
-<!-- THINK INSIDE THE BOX -->
-<section class="box">
-  <div class="wrap">
-    <div class="bx-txt">
-      <h2 class="rv">I help clients to <span class="inbox">‘Think Inside the Box’</span><sup>TM</sup></h2>
-      <p class="rv d1">working with owners and decision-makers to help them see <span class="forest">the forest for the trees</span> to determine the unique things that they do best. Develop and hone that difference, and then...</p>
-      <p class="tell rv d2">…tell the world about it.</p>
-    </div>
-  </div>
-</section>
 
 <!-- CONSULTATION -->
 <section class="consult rv">
