@@ -379,8 +379,9 @@ footer ul a:hover,footer .f-contact a:hover{color:var(--green)}
 .f-work a{color:var(--grey)}
 .f-work a:hover{color:var(--green)}
 .f-bottom{background:var(--forest);color:#cfd6c8;position:relative;z-index:2}
+.f-bottom .credit{color:#fff;font-weight:700;border-bottom:1px solid var(--green);transition:color .3s}
+.f-bottom .credit:hover{color:#8FD3A4}
 .f-bottom .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding:20px 0;font-size:13px}
-.totop{background:var(--green);color:#fff;border:0;border-radius:99px;padding:10px 18px;font-weight:800;font-size:12px;letter-spacing:.12em;cursor:pointer}
 
 /* ---------- freshest card ---------- */
 .fresh-card{position:fixed;left:24px;bottom:24px;z-index:60;width:300px;background:#fff;border-radius:10px;box-shadow:0 20px 50px rgba(0,0,0,.2);display:grid;grid-template-columns:90px 1fr;overflow:hidden;transform:translateY(140%);transition:transform .7s cubic-bezier(.2,.8,.2,1)}
@@ -713,7 +714,7 @@ footer ul a:hover,footer .f-contact a:hover{color:var(--green)}
     <div><h5>Client Work</h5><div class="f-work" id="fwork"></div></div>
     <div class="f-contact"><h5>Location</h5><p>Caught Between Kits &amp; Shaughnessy<br>VANCOUVER BC CANADA</p><h5 style="margin-top:26px">Contact</h5><p><a href="mailto:Rob@RobGlennieConsulting.com">Rob@RobGlennieConsulting.com</a><br><a href="tel:2047998199">204-799-8199</a><br>(local in Vancouver)</p></div>
   </div>
-  <div class="f-bottom"><div class="wrap"><span>© <span id="yr"></span> FRESH THINKING <span class="spk">✦</span> Rob Glennie Consulting</span><span>Get out your thinking gel!</span><button class="totop" onclick="scrollTo({top:0,behavior:'smooth'})">BACK TO TOP ↑</button></div></div>
+  <div class="f-bottom"><div class="wrap"><span>© <span id="yr"></span> FRESH THINKING <span class="spk">✦</span> Rob Glennie Consulting</span><span>Get out your thinking gel!</span><span>Design by <a class="credit" href="https://dallaswebagency.us" target="_blank" rel="noopener">Dallas Web Agency</a></span></div></div>
 </footer>
 
 <!-- FRESHEST THINKING card (from live site popup) -->
